@@ -52,8 +52,8 @@ def flag_anomalies(row):
         return 'Normal'
 
 if __name__ == "__main__":
-    energy_labels_file = os.environ.get('INPUT_FILE', 'energy_labels_year_of_construction.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'energy_label_construction_analysis.xlsx')
+    energy_labels_file = os.environ.get('INPUT_FILE', 'energy_labels_year_of_contruction.txt')
+    output_file = os.environ.get('OUTPUT_FILE', 'energy_labels_year_of_contruction.xlsx')
 
     energy_labels_path = f"/app/data/{energy_labels_file}"
     

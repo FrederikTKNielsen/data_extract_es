@@ -35,7 +35,7 @@ def parse_energy_label_validity(file_path):
 
 if __name__ == "__main__":
     input_file = os.environ.get('INPUT_FILE', 'units_usage_energy_label_validity.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'units_usage_energy_label_analysis.xlsx')
+    output_file = os.environ.get('OUTPUT_FILE', 'units_usage_energy_label_validity.xlsx')
 
     input_path = f"/app/data/{input_file}"
     

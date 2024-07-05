@@ -44,8 +44,8 @@ def parse_elasticsearch_output(file_path):
     return pd.DataFrame(results)
 
 if __name__ == "__main__":
-    input_file = os.environ.get('INPUT_FILE', 'parse_elasticsearch.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'parse_elasticsearch.xlsx')
+    input_file = os.environ.get('INPUT_FILE', 'building_area.txt')
+    output_file = os.environ.get('OUTPUT_FILE', 'building_area.xlsx')
 
     file_path = f"/app/data/{input_file}"
     

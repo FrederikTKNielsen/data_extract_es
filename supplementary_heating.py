@@ -37,8 +37,8 @@ def parse_elasticsearch_output(file_path):
 
 
 if __name__ == "__main__":
-    input_file = os.environ.get('INPUT_FILE', 'parse_elasticsearch.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'heating_matrix.xlsx')
+    input_file = os.environ.get('INPUT_FILE', 'supplementary_heating.txt')
+    output_file = os.environ.get('OUTPUT_FILE', 'supplementary_heating.xlsx')
 
     file_path = f"/app/data/{input_file}"
     

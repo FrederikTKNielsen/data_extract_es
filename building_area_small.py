@@ -46,8 +46,8 @@ def create_area_ranges(df):
     return df
 
 if __name__ == "__main__":
-    input_file = os.environ.get('INPUT_FILE', 'parse_elasticsearch.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'parse_elasticsearch.xlsx')
+    input_file = os.environ.get('INPUT_FILE', 'building_area_small.txt')
+    output_file = os.environ.get('OUTPUT_FILE', 'building_area_small.xlsx')
 
     file_path = f"/app/data/{input_file}"
     

@@ -57,7 +57,7 @@ def combine_data(municipalities, energy_labels):
 
 if __name__ == "__main__":
     energy_labels_file = os.environ.get('INPUT_FILE', 'energy_labels.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'energy_label_analysis.xlsx')
+    output_file = os.environ.get('OUTPUT_FILE', 'energy_labels.xlsx')
 
     energy_labels_path = f"/app/data/{energy_labels_file}"
     

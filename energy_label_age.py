@@ -45,8 +45,8 @@ def calculate_weighted_average_age(row):
     return weighted_sum / total_count
 
 if __name__ == "__main__":
-    energy_labels_file = os.environ.get('INPUT_FILE', 'energy_labels.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'energy_label_analysis.xlsx')
+    energy_labels_file = os.environ.get('INPUT_FILE', 'energy_label_age.txt')
+    output_file = os.environ.get('OUTPUT_FILE', 'energy_label_age.xlsx')
 
     energy_labels_path = f"/app/data/{energy_labels_file}"
     

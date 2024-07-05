@@ -27,8 +27,8 @@ def parse_elasticsearch_output(file_path):
     return df
 
 if __name__ == "__main__":
-    input_file = os.environ.get('INPUT_FILE', 'parse_elasticsearch.txt')
-    output_file = os.environ.get('OUTPUT_FILE', 'parse_elasticsearch.xlsx')
+    input_file = os.environ.get('INPUT_FILE', 'brændeovn.txt')
+    output_file = os.environ.get('OUTPUT_FILE', 'brændeovn.xlsx')
 
     file_path = f"/app/data/{input_file}"
     
