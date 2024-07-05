@@ -1,0 +1,1 @@
+ELASTICSEARCH_URL = "http://example.com:9200/bbr_unit/_search"

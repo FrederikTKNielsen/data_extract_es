@@ -41,6 +41,10 @@ ES_DATA_ANALYSE/
    ```
    cd es_data_analyse
    ```
+4. create a .env file with the url:
+   ```
+   see cinfig.py.example
+   ```
 
 ## Usage
 

@@ -15,3 +15,5 @@ __pycache__/
 
 # Docker
 .docker
+# env
+.env

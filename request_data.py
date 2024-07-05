@@ -2,6 +2,7 @@ import requests
 import json
 import os
 
+
 # Create 'data' folder if it doesn't exist
 if not os.path.exists('data'):
     os.makedirs('data')
@@ -19,7 +20,7 @@ if not query_files:
     print("No JSON files found in the 'query' folder. Please add query files.")
     exit()
 
-url = "http://185.121.61.91:9200/bbr_unit/_search"
+url = os.environ.get('ELASTICSEARCH_URL')
 
 headers = {
     'Content-Type': 'application/json'
