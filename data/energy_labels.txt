@@ -1,0 +1,4472 @@
+{
+  "took": 2,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 1554657,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
+    "municipalities": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": 101,
+          "doc_count": 183362,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 92544
+              },
+              {
+                "key": "D",
+                "doc_count": 43883
+              },
+              {
+                "key": "B",
+                "doc_count": 14099
+              },
+              {
+                "key": "A2015",
+                "doc_count": 10062
+              },
+              {
+                "key": "A2020",
+                "doc_count": 7644
+              },
+              {
+                "key": "A2010",
+                "doc_count": 7392
+              },
+              {
+                "key": "E",
+                "doc_count": 5705
+              },
+              {
+                "key": "F",
+                "doc_count": 1607
+              },
+              {
+                "key": "G",
+                "doc_count": 426
+              }
+            ]
+          }
+        },
+        {
+          "key": 751,
+          "doc_count": 116410,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 41511
+              },
+              {
+                "key": "D",
+                "doc_count": 25940
+              },
+              {
+                "key": "A2015",
+                "doc_count": 18380
+              },
+              {
+                "key": "B",
+                "doc_count": 12900
+              },
+              {
+                "key": "A2010",
+                "doc_count": 8620
+              },
+              {
+                "key": "E",
+                "doc_count": 3868
+              },
+              {
+                "key": "A2020",
+                "doc_count": 3798
+              },
+              {
+                "key": "F",
+                "doc_count": 984
+              },
+              {
+                "key": "G",
+                "doc_count": 409
+              }
+            ]
+          }
+        },
+        {
+          "key": 851,
+          "doc_count": 79288,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 26600
+              },
+              {
+                "key": "D",
+                "doc_count": 16835
+              },
+              {
+                "key": "B",
+                "doc_count": 10983
+              },
+              {
+                "key": "A2010",
+                "doc_count": 9264
+              },
+              {
+                "key": "A2015",
+                "doc_count": 9179
+              },
+              {
+                "key": "E",
+                "doc_count": 3628
+              },
+              {
+                "key": "F",
+                "doc_count": 1085
+              },
+              {
+                "key": "A2020",
+                "doc_count": 1058
+              },
+              {
+                "key": "G",
+                "doc_count": 656
+              }
+            ]
+          }
+        },
+        {
+          "key": 461,
+          "doc_count": 65149,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 22047
+              },
+              {
+                "key": "D",
+                "doc_count": 13452
+              },
+              {
+                "key": "B",
+                "doc_count": 9157
+              },
+              {
+                "key": "A2015",
+                "doc_count": 5964
+              },
+              {
+                "key": "E",
+                "doc_count": 5863
+              },
+              {
+                "key": "A2010",
+                "doc_count": 4823
+              },
+              {
+                "key": "F",
+                "doc_count": 2197
+              },
+              {
+                "key": "A2020",
+                "doc_count": 1020
+              },
+              {
+                "key": "G",
+                "doc_count": 626
+              }
+            ]
+          }
+        },
+        {
+          "key": 147,
+          "doc_count": 51278,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 28120
+              },
+              {
+                "key": "D",
+                "doc_count": 13045
+              },
+              {
+                "key": "B",
+                "doc_count": 4750
+              },
+              {
+                "key": "A2010",
+                "doc_count": 2423
+              },
+              {
+                "key": "E",
+                "doc_count": 1372
+              },
+              {
+                "key": "A2015",
+                "doc_count": 871
+              },
+              {
+                "key": "A2020",
+                "doc_count": 285
+              },
+              {
+                "key": "F",
+                "doc_count": 230
+              },
+              {
+                "key": "G",
+                "doc_count": 182
+              }
+            ]
+          }
+        },
+        {
+          "key": 730,
+          "doc_count": 31432,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 11041
+              },
+              {
+                "key": "D",
+                "doc_count": 9620
+              },
+              {
+                "key": "B",
+                "doc_count": 3173
+              },
+              {
+                "key": "E",
+                "doc_count": 2735
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2397
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1168
+              },
+              {
+                "key": "F",
+                "doc_count": 652
+              },
+              {
+                "key": "G",
+                "doc_count": 356
+              },
+              {
+                "key": "A2020",
+                "doc_count": 290
+              }
+            ]
+          }
+        },
+        {
+          "key": 561,
+          "doc_count": 27911,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 9205
+              },
+              {
+                "key": "D",
+                "doc_count": 6991
+              },
+              {
+                "key": "E",
+                "doc_count": 3089
+              },
+              {
+                "key": "B",
+                "doc_count": 2718
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2405
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1686
+              },
+              {
+                "key": "F",
+                "doc_count": 990
+              },
+              {
+                "key": "A2020",
+                "doc_count": 439
+              },
+              {
+                "key": "G",
+                "doc_count": 388
+              }
+            ]
+          }
+        },
+        {
+          "key": 265,
+          "doc_count": 26623,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 11027
+              },
+              {
+                "key": "D",
+                "doc_count": 5289
+              },
+              {
+                "key": "B",
+                "doc_count": 3138
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2037
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1695
+              },
+              {
+                "key": "E",
+                "doc_count": 1615
+              },
+              {
+                "key": "A2020",
+                "doc_count": 1065
+              },
+              {
+                "key": "F",
+                "doc_count": 517
+              },
+              {
+                "key": "G",
+                "doc_count": 240
+              }
+            ]
+          }
+        },
+        {
+          "key": 630,
+          "doc_count": 26542,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 9138
+              },
+              {
+                "key": "D",
+                "doc_count": 5560
+              },
+              {
+                "key": "A2015",
+                "doc_count": 3042
+              },
+              {
+                "key": "B",
+                "doc_count": 2753
+              },
+              {
+                "key": "E",
+                "doc_count": 2204
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1426
+              },
+              {
+                "key": "F",
+                "doc_count": 1028
+              },
+              {
+                "key": "A2020",
+                "doc_count": 863
+              },
+              {
+                "key": "G",
+                "doc_count": 528
+              }
+            ]
+          }
+        },
+        {
+          "key": 740,
+          "doc_count": 25771,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 9118
+              },
+              {
+                "key": "D",
+                "doc_count": 5901
+              },
+              {
+                "key": "B",
+                "doc_count": 3046
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2870
+              },
+              {
+                "key": "E",
+                "doc_count": 1608
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1364
+              },
+              {
+                "key": "A2020",
+                "doc_count": 809
+              },
+              {
+                "key": "F",
+                "doc_count": 728
+              },
+              {
+                "key": "G",
+                "doc_count": 327
+              }
+            ]
+          }
+        },
+        {
+          "key": 157,
+          "doc_count": 24970,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "D",
+                "doc_count": 9998
+              },
+              {
+                "key": "C",
+                "doc_count": 9091
+              },
+              {
+                "key": "E",
+                "doc_count": 2632
+              },
+              {
+                "key": "F",
+                "doc_count": 896
+              },
+              {
+                "key": "B",
+                "doc_count": 763
+              },
+              {
+                "key": "G",
+                "doc_count": 576
+              },
+              {
+                "key": "A2015",
+                "doc_count": 575
+              },
+              {
+                "key": "A2010",
+                "doc_count": 362
+              },
+              {
+                "key": "A2020",
+                "doc_count": 77
+              }
+            ]
+          }
+        },
+        {
+          "key": 615,
+          "doc_count": 24751,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 7249
+              },
+              {
+                "key": "A2015",
+                "doc_count": 4930
+              },
+              {
+                "key": "D",
+                "doc_count": 4290
+              },
+              {
+                "key": "B",
+                "doc_count": 3397
+              },
+              {
+                "key": "E",
+                "doc_count": 1884
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1309
+              },
+              {
+                "key": "F",
+                "doc_count": 702
+              },
+              {
+                "key": "A2020",
+                "doc_count": 645
+              },
+              {
+                "key": "G",
+                "doc_count": 345
+              }
+            ]
+          }
+        },
+        {
+          "key": 330,
+          "doc_count": 24693,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 9283
+              },
+              {
+                "key": "D",
+                "doc_count": 6504
+              },
+              {
+                "key": "E",
+                "doc_count": 2484
+              },
+              {
+                "key": "B",
+                "doc_count": 2357
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1143
+              },
+              {
+                "key": "F",
+                "doc_count": 1080
+              },
+              {
+                "key": "A2010",
+                "doc_count": 957
+              },
+              {
+                "key": "G",
+                "doc_count": 532
+              },
+              {
+                "key": "A2020",
+                "doc_count": 353
+              }
+            ]
+          }
+        },
+        {
+          "key": 621,
+          "doc_count": 24240,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 7996
+              },
+              {
+                "key": "D",
+                "doc_count": 5420
+              },
+              {
+                "key": "B",
+                "doc_count": 3615
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2700
+              },
+              {
+                "key": "E",
+                "doc_count": 1784
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1036
+              },
+              {
+                "key": "F",
+                "doc_count": 782
+              },
+              {
+                "key": "A2020",
+                "doc_count": 480
+              },
+              {
+                "key": "G",
+                "doc_count": 427
+              }
+            ]
+          }
+        },
+        {
+          "key": 657,
+          "doc_count": 23920,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 8367
+              },
+              {
+                "key": "D",
+                "doc_count": 5008
+              },
+              {
+                "key": "B",
+                "doc_count": 3602
+              },
+              {
+                "key": "E",
+                "doc_count": 2292
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2181
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1360
+              },
+              {
+                "key": "F",
+                "doc_count": 484
+              },
+              {
+                "key": "A2020",
+                "doc_count": 385
+              },
+              {
+                "key": "G",
+                "doc_count": 241
+              }
+            ]
+          }
+        },
+        {
+          "key": 370,
+          "doc_count": 23805,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 8477
+              },
+              {
+                "key": "D",
+                "doc_count": 6427
+              },
+              {
+                "key": "B",
+                "doc_count": 2835
+              },
+              {
+                "key": "E",
+                "doc_count": 1947
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1194
+              },
+              {
+                "key": "F",
+                "doc_count": 976
+              },
+              {
+                "key": "A2015",
+                "doc_count": 908
+              },
+              {
+                "key": "G",
+                "doc_count": 548
+              },
+              {
+                "key": "A2020",
+                "doc_count": 493
+              }
+            ]
+          }
+        },
+        {
+          "key": 791,
+          "doc_count": 22163,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 7623
+              },
+              {
+                "key": "D",
+                "doc_count": 5333
+              },
+              {
+                "key": "B",
+                "doc_count": 2550
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2531
+              },
+              {
+                "key": "E",
+                "doc_count": 1532
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1074
+              },
+              {
+                "key": "F",
+                "doc_count": 618
+              },
+              {
+                "key": "A2020",
+                "doc_count": 533
+              },
+              {
+                "key": "G",
+                "doc_count": 369
+              }
+            ]
+          }
+        },
+        {
+          "key": 159,
+          "doc_count": 21715,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 7931
+              },
+              {
+                "key": "D",
+                "doc_count": 7087
+              },
+              {
+                "key": "E",
+                "doc_count": 2014
+              },
+              {
+                "key": "B",
+                "doc_count": 1875
+              },
+              {
+                "key": "A2015",
+                "doc_count": 916
+              },
+              {
+                "key": "A2010",
+                "doc_count": 827
+              },
+              {
+                "key": "A2020",
+                "doc_count": 500
+              },
+              {
+                "key": "F",
+                "doc_count": 404
+              },
+              {
+                "key": "G",
+                "doc_count": 161
+              }
+            ]
+          }
+        },
+        {
+          "key": 173,
+          "doc_count": 19816,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 7471
+              },
+              {
+                "key": "D",
+                "doc_count": 6014
+              },
+              {
+                "key": "E",
+                "doc_count": 1643
+              },
+              {
+                "key": "B",
+                "doc_count": 1464
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1064
+              },
+              {
+                "key": "A2010",
+                "doc_count": 686
+              },
+              {
+                "key": "F",
+                "doc_count": 673
+              },
+              {
+                "key": "A2020",
+                "doc_count": 565
+              },
+              {
+                "key": "G",
+                "doc_count": 236
+              }
+            ]
+          }
+        },
+        {
+          "key": 217,
+          "doc_count": 19608,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 7643
+              },
+              {
+                "key": "D",
+                "doc_count": 5649
+              },
+              {
+                "key": "E",
+                "doc_count": 1742
+              },
+              {
+                "key": "B",
+                "doc_count": 1728
+              },
+              {
+                "key": "A2015",
+                "doc_count": 704
+              },
+              {
+                "key": "F",
+                "doc_count": 692
+              },
+              {
+                "key": "A2010",
+                "doc_count": 604
+              },
+              {
+                "key": "A2020",
+                "doc_count": 433
+              },
+              {
+                "key": "G",
+                "doc_count": 413
+              }
+            ]
+          }
+        },
+        {
+          "key": 167,
+          "doc_count": 19038,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 10581
+              },
+              {
+                "key": "D",
+                "doc_count": 2710
+              },
+              {
+                "key": "B",
+                "doc_count": 1461
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1445
+              },
+              {
+                "key": "E",
+                "doc_count": 1397
+              },
+              {
+                "key": "A2020",
+                "doc_count": 447
+              },
+              {
+                "key": "G",
+                "doc_count": 383
+              },
+              {
+                "key": "A2015",
+                "doc_count": 316
+              },
+              {
+                "key": "F",
+                "doc_count": 298
+              }
+            ]
+          }
+        },
+        {
+          "key": 169,
+          "doc_count": 18394,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 6871
+              },
+              {
+                "key": "B",
+                "doc_count": 2880
+              },
+              {
+                "key": "D",
+                "doc_count": 2719
+              },
+              {
+                "key": "A2020",
+                "doc_count": 2387
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1761
+              },
+              {
+                "key": "E",
+                "doc_count": 1090
+              },
+              {
+                "key": "A2010",
+                "doc_count": 398
+              },
+              {
+                "key": "F",
+                "doc_count": 182
+              },
+              {
+                "key": "G",
+                "doc_count": 106
+              }
+            ]
+          }
+        },
+        {
+          "key": 259,
+          "doc_count": 18374,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 7802
+              },
+              {
+                "key": "D",
+                "doc_count": 3064
+              },
+              {
+                "key": "B",
+                "doc_count": 3003
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1942
+              },
+              {
+                "key": "E",
+                "doc_count": 966
+              },
+              {
+                "key": "A2010",
+                "doc_count": 638
+              },
+              {
+                "key": "F",
+                "doc_count": 480
+              },
+              {
+                "key": "G",
+                "doc_count": 252
+              },
+              {
+                "key": "A2020",
+                "doc_count": 227
+              }
+            ]
+          }
+        },
+        {
+          "key": 813,
+          "doc_count": 17052,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 6017
+              },
+              {
+                "key": "D",
+                "doc_count": 3462
+              },
+              {
+                "key": "B",
+                "doc_count": 2327
+              },
+              {
+                "key": "E",
+                "doc_count": 1517
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1494
+              },
+              {
+                "key": "A2015",
+                "doc_count": 962
+              },
+              {
+                "key": "F",
+                "doc_count": 681
+              },
+              {
+                "key": "G",
+                "doc_count": 372
+              },
+              {
+                "key": "A2020",
+                "doc_count": 220
+              }
+            ]
+          }
+        },
+        {
+          "key": 230,
+          "doc_count": 15807,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 6794
+              },
+              {
+                "key": "D",
+                "doc_count": 4071
+              },
+              {
+                "key": "E",
+                "doc_count": 1435
+              },
+              {
+                "key": "B",
+                "doc_count": 1204
+              },
+              {
+                "key": "A2015",
+                "doc_count": 863
+              },
+              {
+                "key": "F",
+                "doc_count": 478
+              },
+              {
+                "key": "A2010",
+                "doc_count": 458
+              },
+              {
+                "key": "A2020",
+                "doc_count": 302
+              },
+              {
+                "key": "G",
+                "doc_count": 202
+              }
+            ]
+          }
+        },
+        {
+          "key": 219,
+          "doc_count": 15799,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 5961
+              },
+              {
+                "key": "D",
+                "doc_count": 2975
+              },
+              {
+                "key": "B",
+                "doc_count": 2102
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1871
+              },
+              {
+                "key": "A2010",
+                "doc_count": 998
+              },
+              {
+                "key": "E",
+                "doc_count": 998
+              },
+              {
+                "key": "A2020",
+                "doc_count": 400
+              },
+              {
+                "key": "F",
+                "doc_count": 325
+              },
+              {
+                "key": "G",
+                "doc_count": 169
+              }
+            ]
+          }
+        },
+        {
+          "key": 607,
+          "doc_count": 15482,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 5746
+              },
+              {
+                "key": "D",
+                "doc_count": 3373
+              },
+              {
+                "key": "B",
+                "doc_count": 2102
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1511
+              },
+              {
+                "key": "E",
+                "doc_count": 994
+              },
+              {
+                "key": "A2010",
+                "doc_count": 828
+              },
+              {
+                "key": "F",
+                "doc_count": 509
+              },
+              {
+                "key": "G",
+                "doc_count": 215
+              },
+              {
+                "key": "A2020",
+                "doc_count": 204
+              }
+            ]
+          }
+        },
+        {
+          "key": 479,
+          "doc_count": 15422,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 5400
+              },
+              {
+                "key": "D",
+                "doc_count": 3285
+              },
+              {
+                "key": "B",
+                "doc_count": 2082
+              },
+              {
+                "key": "E",
+                "doc_count": 1718
+              },
+              {
+                "key": "A2015",
+                "doc_count": 880
+              },
+              {
+                "key": "F",
+                "doc_count": 804
+              },
+              {
+                "key": "G",
+                "doc_count": 564
+              },
+              {
+                "key": "A2010",
+                "doc_count": 474
+              },
+              {
+                "key": "A2020",
+                "doc_count": 215
+              }
+            ]
+          }
+        },
+        {
+          "key": 746,
+          "doc_count": 14877,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 5651
+              },
+              {
+                "key": "D",
+                "doc_count": 2528
+              },
+              {
+                "key": "A2015",
+                "doc_count": 2112
+              },
+              {
+                "key": "B",
+                "doc_count": 2046
+              },
+              {
+                "key": "A2010",
+                "doc_count": 818
+              },
+              {
+                "key": "E",
+                "doc_count": 758
+              },
+              {
+                "key": "A2020",
+                "doc_count": 492
+              },
+              {
+                "key": "F",
+                "doc_count": 319
+              },
+              {
+                "key": "G",
+                "doc_count": 153
+              }
+            ]
+          }
+        },
+        {
+          "key": 175,
+          "doc_count": 14759,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 6330
+              },
+              {
+                "key": "D",
+                "doc_count": 3185
+              },
+              {
+                "key": "B",
+                "doc_count": 1968
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1309
+              },
+              {
+                "key": "E",
+                "doc_count": 899
+              },
+              {
+                "key": "A2020",
+                "doc_count": 387
+              },
+              {
+                "key": "A2010",
+                "doc_count": 291
+              },
+              {
+                "key": "F",
+                "doc_count": 269
+              },
+              {
+                "key": "G",
+                "doc_count": 121
+              }
+            ]
+          }
+        },
+        {
+          "key": 860,
+          "doc_count": 14684,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4365
+              },
+              {
+                "key": "D",
+                "doc_count": 3603
+              },
+              {
+                "key": "B",
+                "doc_count": 1994
+              },
+              {
+                "key": "E",
+                "doc_count": 1678
+              },
+              {
+                "key": "A2015",
+                "doc_count": 960
+              },
+              {
+                "key": "F",
+                "doc_count": 857
+              },
+              {
+                "key": "A2010",
+                "doc_count": 672
+              },
+              {
+                "key": "G",
+                "doc_count": 453
+              },
+              {
+                "key": "A2020",
+                "doc_count": 102
+              }
+            ]
+          }
+        },
+        {
+          "key": 540,
+          "doc_count": 14651,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4894
+              },
+              {
+                "key": "D",
+                "doc_count": 3271
+              },
+              {
+                "key": "E",
+                "doc_count": 1617
+              },
+              {
+                "key": "B",
+                "doc_count": 1450
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1168
+              },
+              {
+                "key": "F",
+                "doc_count": 846
+              },
+              {
+                "key": "G",
+                "doc_count": 610
+              },
+              {
+                "key": "A2015",
+                "doc_count": 504
+              },
+              {
+                "key": "A2020",
+                "doc_count": 291
+              }
+            ]
+          }
+        },
+        {
+          "key": 376,
+          "doc_count": 13874,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4797
+              },
+              {
+                "key": "D",
+                "doc_count": 3365
+              },
+              {
+                "key": "B",
+                "doc_count": 1620
+              },
+              {
+                "key": "E",
+                "doc_count": 1556
+              },
+              {
+                "key": "F",
+                "doc_count": 941
+              },
+              {
+                "key": "G",
+                "doc_count": 858
+              },
+              {
+                "key": "A2015",
+                "doc_count": 426
+              },
+              {
+                "key": "A2010",
+                "doc_count": 227
+              },
+              {
+                "key": "A2020",
+                "doc_count": 84
+              }
+            ]
+          }
+        },
+        {
+          "key": 510,
+          "doc_count": 13443,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4341
+              },
+              {
+                "key": "D",
+                "doc_count": 3399
+              },
+              {
+                "key": "B",
+                "doc_count": 1381
+              },
+              {
+                "key": "E",
+                "doc_count": 1352
+              },
+              {
+                "key": "A2010",
+                "doc_count": 974
+              },
+              {
+                "key": "F",
+                "doc_count": 775
+              },
+              {
+                "key": "A2015",
+                "doc_count": 547
+              },
+              {
+                "key": "G",
+                "doc_count": 503
+              },
+              {
+                "key": "A2020",
+                "doc_count": 171
+              }
+            ]
+          }
+        },
+        {
+          "key": 253,
+          "doc_count": 12980,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 5198
+              },
+              {
+                "key": "B",
+                "doc_count": 2744
+              },
+              {
+                "key": "D",
+                "doc_count": 2006
+              },
+              {
+                "key": "A2015",
+                "doc_count": 854
+              },
+              {
+                "key": "E",
+                "doc_count": 772
+              },
+              {
+                "key": "A2010",
+                "doc_count": 751
+              },
+              {
+                "key": "A2020",
+                "doc_count": 293
+              },
+              {
+                "key": "F",
+                "doc_count": 247
+              },
+              {
+                "key": "G",
+                "doc_count": 115
+              }
+            ]
+          }
+        },
+        {
+          "key": 153,
+          "doc_count": 12781,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4440
+              },
+              {
+                "key": "D",
+                "doc_count": 3697
+              },
+              {
+                "key": "E",
+                "doc_count": 1517
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1181
+              },
+              {
+                "key": "B",
+                "doc_count": 918
+              },
+              {
+                "key": "A2020",
+                "doc_count": 573
+              },
+              {
+                "key": "A2010",
+                "doc_count": 274
+              },
+              {
+                "key": "F",
+                "doc_count": 129
+              },
+              {
+                "key": "G",
+                "doc_count": 52
+              }
+            ]
+          }
+        },
+        {
+          "key": 316,
+          "doc_count": 12750,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4466
+              },
+              {
+                "key": "D",
+                "doc_count": 3022
+              },
+              {
+                "key": "E",
+                "doc_count": 1247
+              },
+              {
+                "key": "B",
+                "doc_count": 1054
+              },
+              {
+                "key": "A2015",
+                "doc_count": 838
+              },
+              {
+                "key": "A2020",
+                "doc_count": 624
+              },
+              {
+                "key": "F",
+                "doc_count": 615
+              },
+              {
+                "key": "A2010",
+                "doc_count": 465
+              },
+              {
+                "key": "G",
+                "doc_count": 419
+              }
+            ]
+          }
+        },
+        {
+          "key": 190,
+          "doc_count": 11728,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 5874
+              },
+              {
+                "key": "B",
+                "doc_count": 1857
+              },
+              {
+                "key": "D",
+                "doc_count": 1718
+              },
+              {
+                "key": "A2015",
+                "doc_count": 757
+              },
+              {
+                "key": "E",
+                "doc_count": 580
+              },
+              {
+                "key": "A2010",
+                "doc_count": 425
+              },
+              {
+                "key": "A2020",
+                "doc_count": 300
+              },
+              {
+                "key": "F",
+                "doc_count": 160
+              },
+              {
+                "key": "G",
+                "doc_count": 57
+              }
+            ]
+          }
+        },
+        {
+          "key": 326,
+          "doc_count": 11463,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3914
+              },
+              {
+                "key": "D",
+                "doc_count": 2966
+              },
+              {
+                "key": "E",
+                "doc_count": 1408
+              },
+              {
+                "key": "B",
+                "doc_count": 1193
+              },
+              {
+                "key": "F",
+                "doc_count": 654
+              },
+              {
+                "key": "G",
+                "doc_count": 493
+              },
+              {
+                "key": "A2015",
+                "doc_count": 434
+              },
+              {
+                "key": "A2010",
+                "doc_count": 337
+              },
+              {
+                "key": "A2020",
+                "doc_count": 64
+              }
+            ]
+          }
+        },
+        {
+          "key": 580,
+          "doc_count": 11167,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3624
+              },
+              {
+                "key": "D",
+                "doc_count": 2820
+              },
+              {
+                "key": "E",
+                "doc_count": 1403
+              },
+              {
+                "key": "B",
+                "doc_count": 1007
+              },
+              {
+                "key": "F",
+                "doc_count": 758
+              },
+              {
+                "key": "A2015",
+                "doc_count": 664
+              },
+              {
+                "key": "G",
+                "doc_count": 401
+              },
+              {
+                "key": "A2010",
+                "doc_count": 340
+              },
+              {
+                "key": "A2020",
+                "doc_count": 150
+              }
+            ]
+          }
+        },
+        {
+          "key": 210,
+          "doc_count": 11075,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3923
+              },
+              {
+                "key": "D",
+                "doc_count": 2896
+              },
+              {
+                "key": "B",
+                "doc_count": 1383
+              },
+              {
+                "key": "E",
+                "doc_count": 903
+              },
+              {
+                "key": "A2010",
+                "doc_count": 844
+              },
+              {
+                "key": "A2015",
+                "doc_count": 497
+              },
+              {
+                "key": "F",
+                "doc_count": 313
+              },
+              {
+                "key": "G",
+                "doc_count": 238
+              },
+              {
+                "key": "A2020",
+                "doc_count": 78
+              }
+            ]
+          }
+        },
+        {
+          "key": 430,
+          "doc_count": 11005,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3333
+              },
+              {
+                "key": "D",
+                "doc_count": 2473
+              },
+              {
+                "key": "E",
+                "doc_count": 1389
+              },
+              {
+                "key": "B",
+                "doc_count": 1011
+              },
+              {
+                "key": "A2015",
+                "doc_count": 858
+              },
+              {
+                "key": "F",
+                "doc_count": 773
+              },
+              {
+                "key": "G",
+                "doc_count": 587
+              },
+              {
+                "key": "A2010",
+                "doc_count": 394
+              },
+              {
+                "key": "A2020",
+                "doc_count": 187
+              }
+            ]
+          }
+        },
+        {
+          "key": 163,
+          "doc_count": 10981,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4116
+              },
+              {
+                "key": "D",
+                "doc_count": 2595
+              },
+              {
+                "key": "B",
+                "doc_count": 1725
+              },
+              {
+                "key": "A2015",
+                "doc_count": 887
+              },
+              {
+                "key": "E",
+                "doc_count": 758
+              },
+              {
+                "key": "A2010",
+                "doc_count": 416
+              },
+              {
+                "key": "A2020",
+                "doc_count": 295
+              },
+              {
+                "key": "F",
+                "doc_count": 151
+              },
+              {
+                "key": "G",
+                "doc_count": 38
+              }
+            ]
+          }
+        },
+        {
+          "key": 250,
+          "doc_count": 10848,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4211
+              },
+              {
+                "key": "D",
+                "doc_count": 2366
+              },
+              {
+                "key": "B",
+                "doc_count": 1159
+              },
+              {
+                "key": "E",
+                "doc_count": 932
+              },
+              {
+                "key": "A2015",
+                "doc_count": 861
+              },
+              {
+                "key": "A2010",
+                "doc_count": 403
+              },
+              {
+                "key": "F",
+                "doc_count": 339
+              },
+              {
+                "key": "A2020",
+                "doc_count": 322
+              },
+              {
+                "key": "G",
+                "doc_count": 255
+              }
+            ]
+          }
+        },
+        {
+          "key": 661,
+          "doc_count": 10790,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 4085
+              },
+              {
+                "key": "D",
+                "doc_count": 2339
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1115
+              },
+              {
+                "key": "B",
+                "doc_count": 1109
+              },
+              {
+                "key": "E",
+                "doc_count": 1001
+              },
+              {
+                "key": "A2010",
+                "doc_count": 439
+              },
+              {
+                "key": "F",
+                "doc_count": 401
+              },
+              {
+                "key": "G",
+                "doc_count": 175
+              },
+              {
+                "key": "A2020",
+                "doc_count": 126
+              }
+            ]
+          }
+        },
+        {
+          "key": 760,
+          "doc_count": 10159,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3250
+              },
+              {
+                "key": "D",
+                "doc_count": 2709
+              },
+              {
+                "key": "E",
+                "doc_count": 1067
+              },
+              {
+                "key": "B",
+                "doc_count": 1016
+              },
+              {
+                "key": "A2015",
+                "doc_count": 654
+              },
+              {
+                "key": "F",
+                "doc_count": 530
+              },
+              {
+                "key": "G",
+                "doc_count": 443
+              },
+              {
+                "key": "A2010",
+                "doc_count": 413
+              },
+              {
+                "key": "A2020",
+                "doc_count": 77
+              }
+            ]
+          }
+        },
+        {
+          "key": 165,
+          "doc_count": 9985,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3283
+              },
+              {
+                "key": "D",
+                "doc_count": 2864
+              },
+              {
+                "key": "B",
+                "doc_count": 1654
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1328
+              },
+              {
+                "key": "A2015",
+                "doc_count": 404
+              },
+              {
+                "key": "E",
+                "doc_count": 344
+              },
+              {
+                "key": "F",
+                "doc_count": 54
+              },
+              {
+                "key": "A2020",
+                "doc_count": 30
+              },
+              {
+                "key": "G",
+                "doc_count": 24
+              }
+            ]
+          }
+        },
+        {
+          "key": 710,
+          "doc_count": 9787,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3502
+              },
+              {
+                "key": "D",
+                "doc_count": 1844
+              },
+              {
+                "key": "B",
+                "doc_count": 1513
+              },
+              {
+                "key": "A2015",
+                "doc_count": 985
+              },
+              {
+                "key": "E",
+                "doc_count": 612
+              },
+              {
+                "key": "A2010",
+                "doc_count": 607
+              },
+              {
+                "key": "F",
+                "doc_count": 301
+              },
+              {
+                "key": "A2020",
+                "doc_count": 227
+              },
+              {
+                "key": "G",
+                "doc_count": 196
+              }
+            ]
+          }
+        },
+        {
+          "key": 360,
+          "doc_count": 9755,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3128
+              },
+              {
+                "key": "D",
+                "doc_count": 2397
+              },
+              {
+                "key": "E",
+                "doc_count": 1131
+              },
+              {
+                "key": "B",
+                "doc_count": 1078
+              },
+              {
+                "key": "F",
+                "doc_count": 812
+              },
+              {
+                "key": "G",
+                "doc_count": 707
+              },
+              {
+                "key": "A2010",
+                "doc_count": 369
+              },
+              {
+                "key": "A2015",
+                "doc_count": 122
+              },
+              {
+                "key": "A2020",
+                "doc_count": 11
+              }
+            ]
+          }
+        },
+        {
+          "key": 329,
+          "doc_count": 9732,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3668
+              },
+              {
+                "key": "D",
+                "doc_count": 1869
+              },
+              {
+                "key": "B",
+                "doc_count": 1557
+              },
+              {
+                "key": "A2015",
+                "doc_count": 824
+              },
+              {
+                "key": "E",
+                "doc_count": 768
+              },
+              {
+                "key": "A2010",
+                "doc_count": 398
+              },
+              {
+                "key": "F",
+                "doc_count": 281
+              },
+              {
+                "key": "G",
+                "doc_count": 185
+              },
+              {
+                "key": "A2020",
+                "doc_count": 182
+              }
+            ]
+          }
+        },
+        {
+          "key": 410,
+          "doc_count": 9577,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2780
+              },
+              {
+                "key": "D",
+                "doc_count": 1709
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1408
+              },
+              {
+                "key": "B",
+                "doc_count": 1123
+              },
+              {
+                "key": "E",
+                "doc_count": 922
+              },
+              {
+                "key": "A2010",
+                "doc_count": 724
+              },
+              {
+                "key": "F",
+                "doc_count": 401
+              },
+              {
+                "key": "G",
+                "doc_count": 289
+              },
+              {
+                "key": "A2020",
+                "doc_count": 221
+              }
+            ]
+          }
+        },
+        {
+          "key": 400,
+          "doc_count": 9262,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2954
+              },
+              {
+                "key": "D",
+                "doc_count": 2666
+              },
+              {
+                "key": "E",
+                "doc_count": 1342
+              },
+              {
+                "key": "B",
+                "doc_count": 724
+              },
+              {
+                "key": "F",
+                "doc_count": 720
+              },
+              {
+                "key": "G",
+                "doc_count": 493
+              },
+              {
+                "key": "A2010",
+                "doc_count": 186
+              },
+              {
+                "key": "A2015",
+                "doc_count": 144
+              },
+              {
+                "key": "A2020",
+                "doc_count": 33
+              }
+            ]
+          }
+        },
+        {
+          "key": 573,
+          "doc_count": 9219,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3281
+              },
+              {
+                "key": "D",
+                "doc_count": 2158
+              },
+              {
+                "key": "E",
+                "doc_count": 900
+              },
+              {
+                "key": "B",
+                "doc_count": 878
+              },
+              {
+                "key": "A2015",
+                "doc_count": 554
+              },
+              {
+                "key": "F",
+                "doc_count": 512
+              },
+              {
+                "key": "G",
+                "doc_count": 448
+              },
+              {
+                "key": "A2010",
+                "doc_count": 376
+              },
+              {
+                "key": "A2020",
+                "doc_count": 112
+              }
+            ]
+          }
+        },
+        {
+          "key": 846,
+          "doc_count": 9160,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3047
+              },
+              {
+                "key": "D",
+                "doc_count": 2423
+              },
+              {
+                "key": "B",
+                "doc_count": 784
+              },
+              {
+                "key": "E",
+                "doc_count": 782
+              },
+              {
+                "key": "A2015",
+                "doc_count": 738
+              },
+              {
+                "key": "A2010",
+                "doc_count": 611
+              },
+              {
+                "key": "F",
+                "doc_count": 438
+              },
+              {
+                "key": "G",
+                "doc_count": 218
+              },
+              {
+                "key": "A2020",
+                "doc_count": 119
+              }
+            ]
+          }
+        },
+        {
+          "key": 766,
+          "doc_count": 9067,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2811
+              },
+              {
+                "key": "D",
+                "doc_count": 1825
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1229
+              },
+              {
+                "key": "E",
+                "doc_count": 882
+              },
+              {
+                "key": "B",
+                "doc_count": 780
+              },
+              {
+                "key": "F",
+                "doc_count": 435
+              },
+              {
+                "key": "A2020",
+                "doc_count": 434
+              },
+              {
+                "key": "A2010",
+                "doc_count": 399
+              },
+              {
+                "key": "G",
+                "doc_count": 272
+              }
+            ]
+          }
+        },
+        {
+          "key": 320,
+          "doc_count": 8874,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3191
+              },
+              {
+                "key": "D",
+                "doc_count": 1839
+              },
+              {
+                "key": "B",
+                "doc_count": 1013
+              },
+              {
+                "key": "E",
+                "doc_count": 866
+              },
+              {
+                "key": "A2015",
+                "doc_count": 542
+              },
+              {
+                "key": "F",
+                "doc_count": 489
+              },
+              {
+                "key": "A2010",
+                "doc_count": 376
+              },
+              {
+                "key": "A2020",
+                "doc_count": 338
+              },
+              {
+                "key": "G",
+                "doc_count": 220
+              }
+            ]
+          }
+        },
+        {
+          "key": 756,
+          "doc_count": 8864,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3308
+              },
+              {
+                "key": "D",
+                "doc_count": 2058
+              },
+              {
+                "key": "A2015",
+                "doc_count": 923
+              },
+              {
+                "key": "B",
+                "doc_count": 813
+              },
+              {
+                "key": "E",
+                "doc_count": 656
+              },
+              {
+                "key": "A2010",
+                "doc_count": 403
+              },
+              {
+                "key": "F",
+                "doc_count": 291
+              },
+              {
+                "key": "A2020",
+                "doc_count": 238
+              },
+              {
+                "key": "G",
+                "doc_count": 174
+              }
+            ]
+          }
+        },
+        {
+          "key": 240,
+          "doc_count": 8828,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3698
+              },
+              {
+                "key": "D",
+                "doc_count": 2077
+              },
+              {
+                "key": "B",
+                "doc_count": 912
+              },
+              {
+                "key": "A2020",
+                "doc_count": 744
+              },
+              {
+                "key": "E",
+                "doc_count": 456
+              },
+              {
+                "key": "A2010",
+                "doc_count": 412
+              },
+              {
+                "key": "A2015",
+                "doc_count": 247
+              },
+              {
+                "key": "F",
+                "doc_count": 197
+              },
+              {
+                "key": "G",
+                "doc_count": 85
+              }
+            ]
+          }
+        },
+        {
+          "key": 706,
+          "doc_count": 8805,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2734
+              },
+              {
+                "key": "D",
+                "doc_count": 1753
+              },
+              {
+                "key": "B",
+                "doc_count": 924
+              },
+              {
+                "key": "A2015",
+                "doc_count": 882
+              },
+              {
+                "key": "E",
+                "doc_count": 862
+              },
+              {
+                "key": "A2010",
+                "doc_count": 558
+              },
+              {
+                "key": "F",
+                "doc_count": 462
+              },
+              {
+                "key": "G",
+                "doc_count": 429
+              },
+              {
+                "key": "A2020",
+                "doc_count": 201
+              }
+            ]
+          }
+        },
+        {
+          "key": 420,
+          "doc_count": 8440,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2590
+              },
+              {
+                "key": "D",
+                "doc_count": 2166
+              },
+              {
+                "key": "E",
+                "doc_count": 970
+              },
+              {
+                "key": "B",
+                "doc_count": 707
+              },
+              {
+                "key": "F",
+                "doc_count": 573
+              },
+              {
+                "key": "A2015",
+                "doc_count": 481
+              },
+              {
+                "key": "G",
+                "doc_count": 470
+              },
+              {
+                "key": "A2010",
+                "doc_count": 372
+              },
+              {
+                "key": "A2020",
+                "doc_count": 111
+              }
+            ]
+          }
+        },
+        {
+          "key": 810,
+          "doc_count": 8434,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2518
+              },
+              {
+                "key": "D",
+                "doc_count": 1824
+              },
+              {
+                "key": "B",
+                "doc_count": 1291
+              },
+              {
+                "key": "A2015",
+                "doc_count": 926
+              },
+              {
+                "key": "E",
+                "doc_count": 882
+              },
+              {
+                "key": "A2010",
+                "doc_count": 420
+              },
+              {
+                "key": "F",
+                "doc_count": 346
+              },
+              {
+                "key": "G",
+                "doc_count": 174
+              },
+              {
+                "key": "A2020",
+                "doc_count": 53
+              }
+            ]
+          }
+        },
+        {
+          "key": 779,
+          "doc_count": 8394,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "D",
+                "doc_count": 2678
+              },
+              {
+                "key": "C",
+                "doc_count": 2626
+              },
+              {
+                "key": "E",
+                "doc_count": 884
+              },
+              {
+                "key": "B",
+                "doc_count": 692
+              },
+              {
+                "key": "A2010",
+                "doc_count": 423
+              },
+              {
+                "key": "F",
+                "doc_count": 388
+              },
+              {
+                "key": "A2015",
+                "doc_count": 368
+              },
+              {
+                "key": "G",
+                "doc_count": 232
+              },
+              {
+                "key": "A2020",
+                "doc_count": 103
+              }
+            ]
+          }
+        },
+        {
+          "key": 223,
+          "doc_count": 8347,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 3223
+              },
+              {
+                "key": "D",
+                "doc_count": 1905
+              },
+              {
+                "key": "B",
+                "doc_count": 1558
+              },
+              {
+                "key": "A2010",
+                "doc_count": 747
+              },
+              {
+                "key": "E",
+                "doc_count": 466
+              },
+              {
+                "key": "F",
+                "doc_count": 200
+              },
+              {
+                "key": "A2015",
+                "doc_count": 138
+              },
+              {
+                "key": "G",
+                "doc_count": 63
+              },
+              {
+                "key": "A2020",
+                "doc_count": 47
+              }
+            ]
+          }
+        },
+        {
+          "key": 185,
+          "doc_count": 8274,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2797
+              },
+              {
+                "key": "D",
+                "doc_count": 2454
+              },
+              {
+                "key": "E",
+                "doc_count": 1548
+              },
+              {
+                "key": "F",
+                "doc_count": 431
+              },
+              {
+                "key": "B",
+                "doc_count": 358
+              },
+              {
+                "key": "A2015",
+                "doc_count": 264
+              },
+              {
+                "key": "A2010",
+                "doc_count": 152
+              },
+              {
+                "key": "A2020",
+                "doc_count": 147
+              },
+              {
+                "key": "G",
+                "doc_count": 123
+              }
+            ]
+          }
+        },
+        {
+          "key": 575,
+          "doc_count": 7866,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2148
+              },
+              {
+                "key": "D",
+                "doc_count": 2003
+              },
+              {
+                "key": "E",
+                "doc_count": 962
+              },
+              {
+                "key": "B",
+                "doc_count": 828
+              },
+              {
+                "key": "A2015",
+                "doc_count": 687
+              },
+              {
+                "key": "F",
+                "doc_count": 504
+              },
+              {
+                "key": "G",
+                "doc_count": 295
+              },
+              {
+                "key": "A2010",
+                "doc_count": 268
+              },
+              {
+                "key": "A2020",
+                "doc_count": 171
+              }
+            ]
+          }
+        },
+        {
+          "key": 183,
+          "doc_count": 7818,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "B",
+                "doc_count": 2462
+              },
+              {
+                "key": "C",
+                "doc_count": 2261
+              },
+              {
+                "key": "A2010",
+                "doc_count": 1815
+              },
+              {
+                "key": "D",
+                "doc_count": 535
+              },
+              {
+                "key": "A2015",
+                "doc_count": 453
+              },
+              {
+                "key": "E",
+                "doc_count": 143
+              },
+              {
+                "key": "A2020",
+                "doc_count": 69
+              },
+              {
+                "key": "F",
+                "doc_count": 58
+              },
+              {
+                "key": "G",
+                "doc_count": 22
+              }
+            ]
+          }
+        },
+        {
+          "key": 161,
+          "doc_count": 7557,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2911
+              },
+              {
+                "key": "D",
+                "doc_count": 2296
+              },
+              {
+                "key": "B",
+                "doc_count": 1026
+              },
+              {
+                "key": "E",
+                "doc_count": 613
+              },
+              {
+                "key": "A2015",
+                "doc_count": 353
+              },
+              {
+                "key": "A2010",
+                "doc_count": 168
+              },
+              {
+                "key": "F",
+                "doc_count": 114
+              },
+              {
+                "key": "G",
+                "doc_count": 51
+              },
+              {
+                "key": "A2020",
+                "doc_count": 25
+              }
+            ]
+          }
+        },
+        {
+          "key": 849,
+          "doc_count": 7522,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2451
+              },
+              {
+                "key": "D",
+                "doc_count": 1678
+              },
+              {
+                "key": "A2015",
+                "doc_count": 758
+              },
+              {
+                "key": "E",
+                "doc_count": 725
+              },
+              {
+                "key": "B",
+                "doc_count": 595
+              },
+              {
+                "key": "A2010",
+                "doc_count": 526
+              },
+              {
+                "key": "F",
+                "doc_count": 334
+              },
+              {
+                "key": "G",
+                "doc_count": 313
+              },
+              {
+                "key": "A2020",
+                "doc_count": 142
+              }
+            ]
+          }
+        },
+        {
+          "key": 787,
+          "doc_count": 7435,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2294
+              },
+              {
+                "key": "D",
+                "doc_count": 1778
+              },
+              {
+                "key": "E",
+                "doc_count": 903
+              },
+              {
+                "key": "B",
+                "doc_count": 814
+              },
+              {
+                "key": "A2015",
+                "doc_count": 507
+              },
+              {
+                "key": "F",
+                "doc_count": 423
+              },
+              {
+                "key": "A2010",
+                "doc_count": 317
+              },
+              {
+                "key": "G",
+                "doc_count": 313
+              },
+              {
+                "key": "A2020",
+                "doc_count": 86
+              }
+            ]
+          }
+        },
+        {
+          "key": 340,
+          "doc_count": 7399,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2376
+              },
+              {
+                "key": "D",
+                "doc_count": 1717
+              },
+              {
+                "key": "B",
+                "doc_count": 941
+              },
+              {
+                "key": "E",
+                "doc_count": 811
+              },
+              {
+                "key": "F",
+                "doc_count": 457
+              },
+              {
+                "key": "A2015",
+                "doc_count": 384
+              },
+              {
+                "key": "G",
+                "doc_count": 265
+              },
+              {
+                "key": "A2010",
+                "doc_count": 249
+              },
+              {
+                "key": "A2020",
+                "doc_count": 199
+              }
+            ]
+          }
+        },
+        {
+          "key": 450,
+          "doc_count": 7389,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2165
+              },
+              {
+                "key": "D",
+                "doc_count": 1580
+              },
+              {
+                "key": "B",
+                "doc_count": 997
+              },
+              {
+                "key": "A2015",
+                "doc_count": 812
+              },
+              {
+                "key": "E",
+                "doc_count": 711
+              },
+              {
+                "key": "A2010",
+                "doc_count": 442
+              },
+              {
+                "key": "F",
+                "doc_count": 352
+              },
+              {
+                "key": "G",
+                "doc_count": 241
+              },
+              {
+                "key": "A2020",
+                "doc_count": 89
+              }
+            ]
+          }
+        },
+        {
+          "key": 151,
+          "doc_count": 7265,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1825
+              },
+              {
+                "key": "D",
+                "doc_count": 1613
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1017
+              },
+              {
+                "key": "A2020",
+                "doc_count": 884
+              },
+              {
+                "key": "A2010",
+                "doc_count": 678
+              },
+              {
+                "key": "B",
+                "doc_count": 501
+              },
+              {
+                "key": "E",
+                "doc_count": 499
+              },
+              {
+                "key": "F",
+                "doc_count": 182
+              },
+              {
+                "key": "G",
+                "doc_count": 66
+              }
+            ]
+          }
+        },
+        {
+          "key": 820,
+          "doc_count": 7102,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2173
+              },
+              {
+                "key": "D",
+                "doc_count": 1890
+              },
+              {
+                "key": "E",
+                "doc_count": 806
+              },
+              {
+                "key": "B",
+                "doc_count": 738
+              },
+              {
+                "key": "A2015",
+                "doc_count": 576
+              },
+              {
+                "key": "F",
+                "doc_count": 319
+              },
+              {
+                "key": "A2010",
+                "doc_count": 293
+              },
+              {
+                "key": "G",
+                "doc_count": 247
+              },
+              {
+                "key": "A2020",
+                "doc_count": 60
+              }
+            ]
+          }
+        },
+        {
+          "key": 550,
+          "doc_count": 6990,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2055
+              },
+              {
+                "key": "D",
+                "doc_count": 1822
+              },
+              {
+                "key": "E",
+                "doc_count": 917
+              },
+              {
+                "key": "B",
+                "doc_count": 648
+              },
+              {
+                "key": "F",
+                "doc_count": 616
+              },
+              {
+                "key": "G",
+                "doc_count": 534
+              },
+              {
+                "key": "A2010",
+                "doc_count": 185
+              },
+              {
+                "key": "A2015",
+                "doc_count": 160
+              },
+              {
+                "key": "A2020",
+                "doc_count": 53
+              }
+            ]
+          }
+        },
+        {
+          "key": 260,
+          "doc_count": 6921,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2593
+              },
+              {
+                "key": "D",
+                "doc_count": 1491
+              },
+              {
+                "key": "B",
+                "doc_count": 803
+              },
+              {
+                "key": "E",
+                "doc_count": 637
+              },
+              {
+                "key": "A2015",
+                "doc_count": 387
+              },
+              {
+                "key": "F",
+                "doc_count": 353
+              },
+              {
+                "key": "G",
+                "doc_count": 286
+              },
+              {
+                "key": "A2010",
+                "doc_count": 271
+              },
+              {
+                "key": "A2020",
+                "doc_count": 100
+              }
+            ]
+          }
+        },
+        {
+          "key": 306,
+          "doc_count": 6767,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1700
+              },
+              {
+                "key": "D",
+                "doc_count": 1547
+              },
+              {
+                "key": "E",
+                "doc_count": 950
+              },
+              {
+                "key": "G",
+                "doc_count": 691
+              },
+              {
+                "key": "B",
+                "doc_count": 597
+              },
+              {
+                "key": "F",
+                "doc_count": 570
+              },
+              {
+                "key": "A2015",
+                "doc_count": 443
+              },
+              {
+                "key": "A2010",
+                "doc_count": 233
+              },
+              {
+                "key": "A2020",
+                "doc_count": 36
+              }
+            ]
+          }
+        },
+        {
+          "key": 269,
+          "doc_count": 6272,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1955
+              },
+              {
+                "key": "B",
+                "doc_count": 1654
+              },
+              {
+                "key": "D",
+                "doc_count": 669
+              },
+              {
+                "key": "A2015",
+                "doc_count": 572
+              },
+              {
+                "key": "A2010",
+                "doc_count": 570
+              },
+              {
+                "key": "A2020",
+                "doc_count": 498
+              },
+              {
+                "key": "E",
+                "doc_count": 218
+              },
+              {
+                "key": "F",
+                "doc_count": 86
+              },
+              {
+                "key": "G",
+                "doc_count": 50
+              }
+            ]
+          }
+        },
+        {
+          "key": 727,
+          "doc_count": 6105,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "B",
+                "doc_count": 1350
+              },
+              {
+                "key": "C",
+                "doc_count": 1339
+              },
+              {
+                "key": "D",
+                "doc_count": 1103
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1044
+              },
+              {
+                "key": "A2010",
+                "doc_count": 466
+              },
+              {
+                "key": "E",
+                "doc_count": 393
+              },
+              {
+                "key": "G",
+                "doc_count": 176
+              },
+              {
+                "key": "F",
+                "doc_count": 170
+              },
+              {
+                "key": "A2020",
+                "doc_count": 64
+              }
+            ]
+          }
+        },
+        {
+          "key": 840,
+          "doc_count": 6023,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1765
+              },
+              {
+                "key": "D",
+                "doc_count": 1232
+              },
+              {
+                "key": "B",
+                "doc_count": 871
+              },
+              {
+                "key": "A2015",
+                "doc_count": 816
+              },
+              {
+                "key": "E",
+                "doc_count": 454
+              },
+              {
+                "key": "A2010",
+                "doc_count": 441
+              },
+              {
+                "key": "F",
+                "doc_count": 226
+              },
+              {
+                "key": "G",
+                "doc_count": 113
+              },
+              {
+                "key": "A2020",
+                "doc_count": 105
+              }
+            ]
+          }
+        },
+        {
+          "key": 480,
+          "doc_count": 5898,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1468
+              },
+              {
+                "key": "D",
+                "doc_count": 1212
+              },
+              {
+                "key": "B",
+                "doc_count": 904
+              },
+              {
+                "key": "E",
+                "doc_count": 692
+              },
+              {
+                "key": "A2015",
+                "doc_count": 496
+              },
+              {
+                "key": "F",
+                "doc_count": 366
+              },
+              {
+                "key": "A2010",
+                "doc_count": 364
+              },
+              {
+                "key": "G",
+                "doc_count": 340
+              },
+              {
+                "key": "A2020",
+                "doc_count": 56
+              }
+            ]
+          }
+        },
+        {
+          "key": 201,
+          "doc_count": 5668,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 2163
+              },
+              {
+                "key": "D",
+                "doc_count": 1203
+              },
+              {
+                "key": "B",
+                "doc_count": 959
+              },
+              {
+                "key": "A2015",
+                "doc_count": 497
+              },
+              {
+                "key": "E",
+                "doc_count": 327
+              },
+              {
+                "key": "A2010",
+                "doc_count": 257
+              },
+              {
+                "key": "A2020",
+                "doc_count": 122
+              },
+              {
+                "key": "F",
+                "doc_count": 106
+              },
+              {
+                "key": "G",
+                "doc_count": 34
+              }
+            ]
+          }
+        },
+        {
+          "key": 440,
+          "doc_count": 5562,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1756
+              },
+              {
+                "key": "D",
+                "doc_count": 1151
+              },
+              {
+                "key": "E",
+                "doc_count": 942
+              },
+              {
+                "key": "B",
+                "doc_count": 542
+              },
+              {
+                "key": "A2015",
+                "doc_count": 427
+              },
+              {
+                "key": "F",
+                "doc_count": 301
+              },
+              {
+                "key": "A2010",
+                "doc_count": 266
+              },
+              {
+                "key": "G",
+                "doc_count": 135
+              },
+              {
+                "key": "A2020",
+                "doc_count": 42
+              }
+            ]
+          }
+        },
+        {
+          "key": 350,
+          "doc_count": 5452,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1561
+              },
+              {
+                "key": "D",
+                "doc_count": 1308
+              },
+              {
+                "key": "A2015",
+                "doc_count": 527
+              },
+              {
+                "key": "B",
+                "doc_count": 516
+              },
+              {
+                "key": "E",
+                "doc_count": 498
+              },
+              {
+                "key": "F",
+                "doc_count": 324
+              },
+              {
+                "key": "A2010",
+                "doc_count": 268
+              },
+              {
+                "key": "A2020",
+                "doc_count": 266
+              },
+              {
+                "key": "G",
+                "doc_count": 184
+              }
+            ]
+          }
+        },
+        {
+          "key": 530,
+          "doc_count": 5419,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1908
+              },
+              {
+                "key": "D",
+                "doc_count": 1111
+              },
+              {
+                "key": "A2015",
+                "doc_count": 660
+              },
+              {
+                "key": "B",
+                "doc_count": 481
+              },
+              {
+                "key": "E",
+                "doc_count": 397
+              },
+              {
+                "key": "A2010",
+                "doc_count": 376
+              },
+              {
+                "key": "F",
+                "doc_count": 204
+              },
+              {
+                "key": "A2020",
+                "doc_count": 180
+              },
+              {
+                "key": "G",
+                "doc_count": 102
+              }
+            ]
+          }
+        },
+        {
+          "key": 187,
+          "doc_count": 4909,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "D",
+                "doc_count": 1473
+              },
+              {
+                "key": "C",
+                "doc_count": 1103
+              },
+              {
+                "key": "A2010",
+                "doc_count": 886
+              },
+              {
+                "key": "B",
+                "doc_count": 717
+              },
+              {
+                "key": "A2015",
+                "doc_count": 471
+              },
+              {
+                "key": "E",
+                "doc_count": 154
+              },
+              {
+                "key": "F",
+                "doc_count": 53
+              },
+              {
+                "key": "A2020",
+                "doc_count": 38
+              },
+              {
+                "key": "G",
+                "doc_count": 14
+              }
+            ]
+          }
+        },
+        {
+          "key": 336,
+          "doc_count": 4894,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1358
+              },
+              {
+                "key": "D",
+                "doc_count": 1223
+              },
+              {
+                "key": "E",
+                "doc_count": 652
+              },
+              {
+                "key": "A2015",
+                "doc_count": 436
+              },
+              {
+                "key": "B",
+                "doc_count": 317
+              },
+              {
+                "key": "F",
+                "doc_count": 272
+              },
+              {
+                "key": "A2010",
+                "doc_count": 231
+              },
+              {
+                "key": "A2020",
+                "doc_count": 214
+              },
+              {
+                "key": "G",
+                "doc_count": 191
+              }
+            ]
+          }
+        },
+        {
+          "key": 671,
+          "doc_count": 4032,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1333
+              },
+              {
+                "key": "D",
+                "doc_count": 896
+              },
+              {
+                "key": "E",
+                "doc_count": 454
+              },
+              {
+                "key": "B",
+                "doc_count": 401
+              },
+              {
+                "key": "A2015",
+                "doc_count": 371
+              },
+              {
+                "key": "A2010",
+                "doc_count": 294
+              },
+              {
+                "key": "F",
+                "doc_count": 153
+              },
+              {
+                "key": "G",
+                "doc_count": 110
+              },
+              {
+                "key": "A2020",
+                "doc_count": 20
+              }
+            ]
+          }
+        },
+        {
+          "key": 773,
+          "doc_count": 3959,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1447
+              },
+              {
+                "key": "D",
+                "doc_count": 1059
+              },
+              {
+                "key": "E",
+                "doc_count": 464
+              },
+              {
+                "key": "B",
+                "doc_count": 257
+              },
+              {
+                "key": "F",
+                "doc_count": 243
+              },
+              {
+                "key": "A2015",
+                "doc_count": 181
+              },
+              {
+                "key": "G",
+                "doc_count": 155
+              },
+              {
+                "key": "A2010",
+                "doc_count": 81
+              },
+              {
+                "key": "A2020",
+                "doc_count": 72
+              }
+            ]
+          }
+        },
+        {
+          "key": 482,
+          "doc_count": 3516,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 900
+              },
+              {
+                "key": "D",
+                "doc_count": 686
+              },
+              {
+                "key": "E",
+                "doc_count": 560
+              },
+              {
+                "key": "G",
+                "doc_count": 437
+              },
+              {
+                "key": "B",
+                "doc_count": 374
+              },
+              {
+                "key": "F",
+                "doc_count": 348
+              },
+              {
+                "key": "A2015",
+                "doc_count": 144
+              },
+              {
+                "key": "A2010",
+                "doc_count": 59
+              },
+              {
+                "key": "A2020",
+                "doc_count": 8
+              }
+            ]
+          }
+        },
+        {
+          "key": 270,
+          "doc_count": 3201,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 893
+              },
+              {
+                "key": "D",
+                "doc_count": 662
+              },
+              {
+                "key": "B",
+                "doc_count": 371
+              },
+              {
+                "key": "E",
+                "doc_count": 342
+              },
+              {
+                "key": "A2010",
+                "doc_count": 300
+              },
+              {
+                "key": "A2015",
+                "doc_count": 189
+              },
+              {
+                "key": "F",
+                "doc_count": 181
+              },
+              {
+                "key": "G",
+                "doc_count": 180
+              },
+              {
+                "key": "A2020",
+                "doc_count": 83
+              }
+            ]
+          }
+        },
+        {
+          "key": 155,
+          "doc_count": 3044,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 1461
+              },
+              {
+                "key": "D",
+                "doc_count": 772
+              },
+              {
+                "key": "E",
+                "doc_count": 290
+              },
+              {
+                "key": "A2015",
+                "doc_count": 124
+              },
+              {
+                "key": "B",
+                "doc_count": 105
+              },
+              {
+                "key": "F",
+                "doc_count": 94
+              },
+              {
+                "key": "A2010",
+                "doc_count": 85
+              },
+              {
+                "key": "G",
+                "doc_count": 58
+              },
+              {
+                "key": "A2020",
+                "doc_count": 55
+              }
+            ]
+          }
+        },
+        {
+          "key": 665,
+          "doc_count": 3006,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "D",
+                "doc_count": 1031
+              },
+              {
+                "key": "C",
+                "doc_count": 831
+              },
+              {
+                "key": "E",
+                "doc_count": 466
+              },
+              {
+                "key": "F",
+                "doc_count": 190
+              },
+              {
+                "key": "G",
+                "doc_count": 174
+              },
+              {
+                "key": "B",
+                "doc_count": 163
+              },
+              {
+                "key": "A2015",
+                "doc_count": 76
+              },
+              {
+                "key": "A2010",
+                "doc_count": 61
+              },
+              {
+                "key": "A2020",
+                "doc_count": 14
+              }
+            ]
+          }
+        },
+        {
+          "key": 492,
+          "doc_count": 1690,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 398
+              },
+              {
+                "key": "D",
+                "doc_count": 304
+              },
+              {
+                "key": "G",
+                "doc_count": 301
+              },
+              {
+                "key": "E",
+                "doc_count": 225
+              },
+              {
+                "key": "B",
+                "doc_count": 185
+              },
+              {
+                "key": "F",
+                "doc_count": 178
+              },
+              {
+                "key": "A2010",
+                "doc_count": 73
+              },
+              {
+                "key": "A2015",
+                "doc_count": 19
+              },
+              {
+                "key": "A2020",
+                "doc_count": 7
+              }
+            ]
+          }
+        },
+        {
+          "key": 741,
+          "doc_count": 1032,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 237
+              },
+              {
+                "key": "D",
+                "doc_count": 164
+              },
+              {
+                "key": "G",
+                "doc_count": 164
+              },
+              {
+                "key": "E",
+                "doc_count": 121
+              },
+              {
+                "key": "B",
+                "doc_count": 120
+              },
+              {
+                "key": "F",
+                "doc_count": 118
+              },
+              {
+                "key": "A2020",
+                "doc_count": 50
+              },
+              {
+                "key": "A2010",
+                "doc_count": 39
+              },
+              {
+                "key": "A2015",
+                "doc_count": 19
+              }
+            ]
+          }
+        },
+        {
+          "key": 563,
+          "doc_count": 799,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 210
+              },
+              {
+                "key": "D",
+                "doc_count": 155
+              },
+              {
+                "key": "E",
+                "doc_count": 135
+              },
+              {
+                "key": "G",
+                "doc_count": 91
+              },
+              {
+                "key": "A2015",
+                "doc_count": 55
+              },
+              {
+                "key": "B",
+                "doc_count": 51
+              },
+              {
+                "key": "A2010",
+                "doc_count": 37
+              },
+              {
+                "key": "F",
+                "doc_count": 36
+              },
+              {
+                "key": "A2020",
+                "doc_count": 29
+              }
+            ]
+          }
+        },
+        {
+          "key": 825,
+          "doc_count": 484,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "C",
+                "doc_count": 110
+              },
+              {
+                "key": "D",
+                "doc_count": 94
+              },
+              {
+                "key": "G",
+                "doc_count": 80
+              },
+              {
+                "key": "E",
+                "doc_count": 74
+              },
+              {
+                "key": "F",
+                "doc_count": 71
+              },
+              {
+                "key": "B",
+                "doc_count": 21
+              },
+              {
+                "key": "A2010",
+                "doc_count": 18
+              },
+              {
+                "key": "A2015",
+                "doc_count": 16
+              }
+            ]
+          }
+        },
+        {
+          "key": 707,
+          "doc_count": 27,
+          "energy_label": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": "D",
+                "doc_count": 11
+              },
+              {
+                "key": "C",
+                "doc_count": 5
+              },
+              {
+                "key": "F",
+                "doc_count": 4
+              },
+              {
+                "key": "E",
+                "doc_count": 3
+              },
+              {
+                "key": "G",
+                "doc_count": 3
+              },
+              {
+                "key": "A2015",
+                "doc_count": 1
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BA Data Analysis</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+        button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        body.dark-mode button {
+            background-color: #555;
+            color: #fff;
+            border-color: #777;
+        }
+        #status {
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        .tooltip {
+            position: relative;
+            display: inline-block;
+        }
+        .tooltip .tooltiptext {
+            visibility: hidden;
+            width: 200px;
+            background-color: #555;
+            color: #fff;
+            text-align: center;
+            border-radius: 6px;
+            padding: 5px;
+            position: absolute;
+            z-index: 1;
+            bottom: 125%;
+            left: 50%;
+            margin-left: -100px;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        .tooltip:hover .tooltiptext {
+            visibility: visible;
+            opacity: 1;
+        }
+        #log-viewer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        body.dark-mode #log-viewer {
+            background-color: #444;
+            border-color: #666;
+        }
+        .switch {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <h1>BA Data Analysis using Elastic search data - always run request_data first</h1>
+    <label class="switch">
+        <input type="checkbox" onclick="toggleDarkMode()">
+        <span class="slider"></span>
+    </label>
+    <button onclick="runScript('all')">Run All Scripts</button>
+    <br></br> 
+    {% for script in scripts %}
+        <div class="tooltip">
+            <button onclick="runScript('{{ script }}')">Run {{ script }}</button>
+            <span class="tooltiptext">{{ descriptions[script] }}</span>
+        </div>
+    {% endfor %}
+    <br></br> 
+    <button onclick="downloadAllResults()">Download All Results</button>
+    <div id="status"></div>
+    <div id="log-viewer"></div>
+
+    <script>
+        function runScript(scriptName) {
+            document.getElementById('status').innerText = `Running ${scriptName}...`;
+            fetch(`/run/${scriptName}`)
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('status').innerText = data.message;
+                    if (scriptName !== 'all' && scriptName !== 'request_data.py') {
+                        downloadFile(scriptName);
+                    }
+                    updateLog(scriptName);
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = `Error: ${error}`;
+                });
+        }
+
+        function downloadFile(scriptName) {
+            const fileName = `${scriptName.replace('.py', '')}.xlsx`;
+            const link = document.createElement('a');
+            link.href = `/download/${scriptName}`;
+            link.download = fileName;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function downloadAllResults() {
+            window.location.href = '/download_all';
+        }
+
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        }
+
+        function updateLog(scriptName) {
+            fetch(`/log/${scriptName}`)
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('log-viewer').innerText = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching log:', error);
+                });
+        }
+
+        // Check for saved dark mode preference
+        if (localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            document.querySelector('.switch input').checked = true;
+        }
+    </script>
+    <p> Get your data! </p>
+</body>
+</html>

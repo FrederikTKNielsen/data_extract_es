@@ -1,0 +1,64 @@
+{
+  "size": 0,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "exists": {
+            "field": "bbr_building.byg404_coordinates_wgs84"
+          }
+        },
+        {
+          "terms": {
+            "bbr_building.status": [6, 7]
+          }
+        },
+        {
+          "terms": {
+            "bbr_unit.status": [6, 7]
+          }
+        },
+        {
+          "exists": {
+            "field": "dawa_municipality.code"
+          }
+        },
+        {
+          "term": {
+            "bbr_property_relationship-plot.property_type": 1
+          }
+        },
+        {
+          "exists": {
+            "field": "bbr_property_relationship.property_ownership_code"
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "municipalities": {
+      "terms": {
+        "field": "dawa_municipality.code",
+        "size": 1000
+      },
+      "aggs": {
+        "heatingInstallations": {
+          "terms": {
+            "field": "bbr_building.byg056_heating_installation",
+            "size": 1000
+          },
+          "aggs": {
+            "heatingMediums": {
+              "terms": {
+                "field": "bbr_building.byg057_heating_medium",
+                "size": 1000
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

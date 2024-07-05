@@ -1,0 +1,1475 @@
+{
+  "took": 1,
+  "timed_out": false,
+  "_shards": {
+    "total": 5,
+    "successful": 5,
+    "skipped": 0,
+    "failed": 0
+  },
+  "hits": {
+    "total": {
+      "value": 1199089,
+      "relation": "eq"
+    },
+    "max_score": null,
+    "hits": []
+  },
+  "aggregations": {
+    "municipalities": {
+      "doc_count_error_upper_bound": 0,
+      "sum_other_doc_count": 0,
+      "buckets": [
+        {
+          "key": 101,
+          "doc_count": 296764,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 156619
+              }
+            ]
+          }
+        },
+        {
+          "key": 751,
+          "doc_count": 109267,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 79293
+              }
+            ]
+          }
+        },
+        {
+          "key": 851,
+          "doc_count": 60718,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 48187
+              }
+            ]
+          }
+        },
+        {
+          "key": 147,
+          "doc_count": 52627,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 45334
+              }
+            ]
+          }
+        },
+        {
+          "key": 461,
+          "doc_count": 48600,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 34539
+              }
+            ]
+          }
+        },
+        {
+          "key": 157,
+          "doc_count": 22690,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 18145
+              }
+            ]
+          }
+        },
+        {
+          "key": 730,
+          "doc_count": 21914,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 17439
+              }
+            ]
+          }
+        },
+        {
+          "key": 561,
+          "doc_count": 21862,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 12607
+              }
+            ]
+          }
+        },
+        {
+          "key": 630,
+          "doc_count": 19902,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 9842
+              }
+            ]
+          }
+        },
+        {
+          "key": 159,
+          "doc_count": 18847,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 13939
+              }
+            ]
+          }
+        },
+        {
+          "key": 615,
+          "doc_count": 18114,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 11072
+              }
+            ]
+          }
+        },
+        {
+          "key": 621,
+          "doc_count": 17253,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 10361
+              }
+            ]
+          }
+        },
+        {
+          "key": 330,
+          "doc_count": 16494,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 12763
+              }
+            ]
+          }
+        },
+        {
+          "key": 265,
+          "doc_count": 16379,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 11819
+              }
+            ]
+          }
+        },
+        {
+          "key": 173,
+          "doc_count": 15621,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 12530
+              }
+            ]
+          }
+        },
+        {
+          "key": 217,
+          "doc_count": 14560,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 10733
+              }
+            ]
+          }
+        },
+        {
+          "key": 657,
+          "doc_count": 14462,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 10726
+              }
+            ]
+          }
+        },
+        {
+          "key": 167,
+          "doc_count": 13847,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 12702
+              }
+            ]
+          }
+        },
+        {
+          "key": 169,
+          "doc_count": 13844,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 12193
+              }
+            ]
+          }
+        },
+        {
+          "key": 151,
+          "doc_count": 13572,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2930
+              }
+            ]
+          }
+        },
+        {
+          "key": 740,
+          "doc_count": 13243,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 9599
+              }
+            ]
+          }
+        },
+        {
+          "key": 791,
+          "doc_count": 12872,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 8055
+              }
+            ]
+          }
+        },
+        {
+          "key": 175,
+          "doc_count": 12432,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 10363
+              }
+            ]
+          }
+        },
+        {
+          "key": 370,
+          "doc_count": 12422,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 9767
+              }
+            ]
+          }
+        },
+        {
+          "key": 607,
+          "doc_count": 12028,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 7910
+              }
+            ]
+          }
+        },
+        {
+          "key": 153,
+          "doc_count": 11371,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 9363
+              }
+            ]
+          }
+        },
+        {
+          "key": 185,
+          "doc_count": 10595,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4744
+              }
+            ]
+          }
+        },
+        {
+          "key": 219,
+          "doc_count": 10581,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 8638
+              }
+            ]
+          }
+        },
+        {
+          "key": 230,
+          "doc_count": 10440,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 7679
+              }
+            ]
+          }
+        },
+        {
+          "key": 540,
+          "doc_count": 10288,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4692
+              }
+            ]
+          }
+        },
+        {
+          "key": 259,
+          "doc_count": 9505,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 8238
+              }
+            ]
+          }
+        },
+        {
+          "key": 510,
+          "doc_count": 8859,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5594
+              }
+            ]
+          }
+        },
+        {
+          "key": 813,
+          "doc_count": 8119,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5251
+              }
+            ]
+          }
+        },
+        {
+          "key": 661,
+          "doc_count": 8001,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 3264
+              }
+            ]
+          }
+        },
+        {
+          "key": 860,
+          "doc_count": 7914,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4416
+              }
+            ]
+          }
+        },
+        {
+          "key": 479,
+          "doc_count": 7736,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5071
+              }
+            ]
+          }
+        },
+        {
+          "key": 376,
+          "doc_count": 7711,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4713
+              }
+            ]
+          }
+        },
+        {
+          "key": 316,
+          "doc_count": 7121,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5223
+              }
+            ]
+          }
+        },
+        {
+          "key": 161,
+          "doc_count": 7057,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5401
+              }
+            ]
+          }
+        },
+        {
+          "key": 580,
+          "doc_count": 6740,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 3193
+              }
+            ]
+          }
+        },
+        {
+          "key": 163,
+          "doc_count": 6561,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5762
+              }
+            ]
+          }
+        },
+        {
+          "key": 329,
+          "doc_count": 6454,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4790
+              }
+            ]
+          }
+        },
+        {
+          "key": 253,
+          "doc_count": 6275,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5266
+              }
+            ]
+          }
+        },
+        {
+          "key": 779,
+          "doc_count": 6161,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 3088
+              }
+            ]
+          }
+        },
+        {
+          "key": 183,
+          "doc_count": 5934,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5628
+              }
+            ]
+          }
+        },
+        {
+          "key": 190,
+          "doc_count": 5873,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 5592
+              }
+            ]
+          }
+        },
+        {
+          "key": 746,
+          "doc_count": 5853,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4327
+              }
+            ]
+          }
+        },
+        {
+          "key": 210,
+          "doc_count": 5377,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4329
+              }
+            ]
+          }
+        },
+        {
+          "key": 250,
+          "doc_count": 4815,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 3716
+              }
+            ]
+          }
+        },
+        {
+          "key": 223,
+          "doc_count": 4777,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 4403
+              }
+            ]
+          }
+        },
+        {
+          "key": 846,
+          "doc_count": 4711,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2582
+              }
+            ]
+          }
+        },
+        {
+          "key": 165,
+          "doc_count": 4654,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 3958
+              }
+            ]
+          }
+        },
+        {
+          "key": 360,
+          "doc_count": 4489,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2934
+              }
+            ]
+          }
+        },
+        {
+          "key": 450,
+          "doc_count": 4454,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2396
+              }
+            ]
+          }
+        },
+        {
+          "key": 326,
+          "doc_count": 4430,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 3141
+              }
+            ]
+          }
+        },
+        {
+          "key": 756,
+          "doc_count": 4132,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2572
+              }
+            ]
+          }
+        },
+        {
+          "key": 707,
+          "doc_count": 3865,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": []
+          }
+        },
+        {
+          "key": 787,
+          "doc_count": 3818,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1528
+              }
+            ]
+          }
+        },
+        {
+          "key": 760,
+          "doc_count": 3731,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1435
+              }
+            ]
+          }
+        },
+        {
+          "key": 573,
+          "doc_count": 3582,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1844
+              }
+            ]
+          }
+        },
+        {
+          "key": 410,
+          "doc_count": 3361,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2043
+              }
+            ]
+          }
+        },
+        {
+          "key": 187,
+          "doc_count": 3349,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 3279
+              }
+            ]
+          }
+        },
+        {
+          "key": 820,
+          "doc_count": 3307,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1481
+              }
+            ]
+          }
+        },
+        {
+          "key": 550,
+          "doc_count": 3233,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1259
+              }
+            ]
+          }
+        },
+        {
+          "key": 810,
+          "doc_count": 3186,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2096
+              }
+            ]
+          }
+        },
+        {
+          "key": 269,
+          "doc_count": 3040,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2753
+              }
+            ]
+          }
+        },
+        {
+          "key": 320,
+          "doc_count": 2953,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2058
+              }
+            ]
+          }
+        },
+        {
+          "key": 260,
+          "doc_count": 2914,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1896
+              }
+            ]
+          }
+        },
+        {
+          "key": 430,
+          "doc_count": 2881,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1572
+              }
+            ]
+          }
+        },
+        {
+          "key": 706,
+          "doc_count": 2852,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1645
+              }
+            ]
+          }
+        },
+        {
+          "key": 710,
+          "doc_count": 2834,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1866
+              }
+            ]
+          }
+        },
+        {
+          "key": 727,
+          "doc_count": 2788,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 2032
+              }
+            ]
+          }
+        },
+        {
+          "key": 671,
+          "doc_count": 2777,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1500
+              }
+            ]
+          }
+        },
+        {
+          "key": 340,
+          "doc_count": 2607,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1831
+              }
+            ]
+          }
+        },
+        {
+          "key": 575,
+          "doc_count": 2588,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1281
+              }
+            ]
+          }
+        },
+        {
+          "key": 420,
+          "doc_count": 2549,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1429
+              }
+            ]
+          }
+        },
+        {
+          "key": 530,
+          "doc_count": 2476,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1274
+              }
+            ]
+          }
+        },
+        {
+          "key": 766,
+          "doc_count": 2466,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1275
+              }
+            ]
+          }
+        },
+        {
+          "key": 400,
+          "doc_count": 2436,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1354
+              }
+            ]
+          }
+        },
+        {
+          "key": 306,
+          "doc_count": 2337,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1052
+              }
+            ]
+          }
+        },
+        {
+          "key": 240,
+          "doc_count": 2307,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1968
+              }
+            ]
+          }
+        },
+        {
+          "key": 201,
+          "doc_count": 2209,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1791
+              }
+            ]
+          }
+        },
+        {
+          "key": 849,
+          "doc_count": 1968,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1121
+              }
+            ]
+          }
+        },
+        {
+          "key": 440,
+          "doc_count": 1783,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1146
+              }
+            ]
+          }
+        },
+        {
+          "key": 773,
+          "doc_count": 1783,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1073
+              }
+            ]
+          }
+        },
+        {
+          "key": 665,
+          "doc_count": 1658,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 555
+              }
+            ]
+          }
+        },
+        {
+          "key": 840,
+          "doc_count": 1446,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 862
+              }
+            ]
+          }
+        },
+        {
+          "key": 480,
+          "doc_count": 1401,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 666
+              }
+            ]
+          }
+        },
+        {
+          "key": 155,
+          "doc_count": 1338,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 1006
+              }
+            ]
+          }
+        },
+        {
+          "key": 336,
+          "doc_count": 928,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 450
+              }
+            ]
+          }
+        },
+        {
+          "key": 482,
+          "doc_count": 899,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 431
+              }
+            ]
+          }
+        },
+        {
+          "key": 270,
+          "doc_count": 800,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 530
+              }
+            ]
+          }
+        },
+        {
+          "key": 350,
+          "doc_count": 535,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 331
+              }
+            ]
+          }
+        },
+        {
+          "key": 492,
+          "doc_count": 360,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 147
+              }
+            ]
+          }
+        },
+        {
+          "key": 741,
+          "doc_count": 243,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 55
+              }
+            ]
+          }
+        },
+        {
+          "key": 563,
+          "doc_count": 126,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 41
+              }
+            ]
+          }
+        },
+        {
+          "key": 825,
+          "doc_count": 53,
+          "energy_label_validity": {
+            "doc_count_error_upper_bound": 0,
+            "sum_other_doc_count": 0,
+            "buckets": [
+              {
+                "key": 1,
+                "key_as_string": "true",
+                "doc_count": 20
+              }
+            ]
+          }
+        }
+      ]
+    }
+  }
+}
