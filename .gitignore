@@ -1,0 +1,23 @@
+# Python
+__pycache__/
+*.py[cod]
+
+# Data files
+*.txt
+*.xlsx
+
+# macOS
+.DS_Store
+
+# Output directory
+/output/
+
+# Data directory
+/data/
+
+# Keep .gitkeep files
+!data/.gitkeep
+!output/.gitkeep
+
+# Docker
+.docker
