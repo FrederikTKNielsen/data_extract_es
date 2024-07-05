@@ -6,13 +6,18 @@ This project is designed to analyze and process data from Elasticsearch queries 
 
 ```
 ES_DATA_ANALYSE/
-├── data/                 # Input data directory
-├── output/               # Output directory for analysis results
+├── data/                 # Input data directory (not tracked by Git)
+├── output/               # Output directory for analysis results (not tracked by Git)
 ├── query/                # Elasticsearch query files
+├── templates/            # HTML templates for the web interface
+├── app.py                # Flask application for web interface
 ├── brændeovn.py
 ├── building_area.py
+├── building_area_small.py
 ├── construction_years.py
 ├── dockerfile
+├── docker-compose.yaml
+├── docker-compose.prod.yaml
 ├── energy_label_age.py
 ├── energy_labels_year_of_contruction.py
 ├── energy_labels.py
@@ -27,11 +32,27 @@ ES_DATA_ANALYSE/
 
 ## Setup and Installation
 
-1. Ensure you have Docker installed on your system.
-2. Clone this repository to your local machine.
-3. Navigate to the project directory.
+1. Ensure you have Docker and Docker Compose installed on your system.
+2. Clone this repository to your local machine:
+   ```
+   git clone https://github.com/Frederiktk/es_data_analyse.git
+   ```
+3. Navigate to the project directory:
+   ```
+   cd es_data_analyse
+   ```
 
 ## Usage
+
+### Running the Web Interface
+
+To start the web interface for easy script execution:
+
+```
+make run
+```
+
+This will build the Docker image if necessary and start the Flask application. Access the web interface at `http://localhost:5001`.
 
 ### Running All Scripts
 
@@ -63,6 +84,7 @@ make run-energy_labels
 - `request_data.py`: Fetches the latest data from Elasticsearch.
 - `brændeovn.py`: Analyzes wood stove data.
 - `building_area.py`: Processes building area information.
+- `building_area_small.py`: Analyzes smaller building areas.
 - `construction_years.py`: Analyzes building construction years.
 - `energy_label_age.py`: Examines the age of energy labels.
 - `energy_labels_year_of_contruction.py`: Correlates energy labels with construction years.
@@ -74,16 +96,30 @@ make run-energy_labels
 
 ## Output
 
-Each script generates an Excel file in the `output/` directory with detailed data and a summary sheet containing key statistics.
+Each script generates an Excel file in the `output/` directory with detailed data and a summary sheet containing key statistics. These files are not tracked by Git to keep the repository size manageable.
 
 ## Customization
 
 - To modify Elasticsearch queries, edit the corresponding files in the `query/` directory.
-- To add new analysis scripts, create a new Python file and update the Makefile to include it in the `SCRIPTS` variable.
+- To add new analysis scripts, create a new Python file and update the `app.py` file to include it in the `SCRIPTS` list.
+
+## Development
+
+To set up a development environment:
+
+1. Create a virtual environment:
+   ```
+   python -m venv venv
+   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+   ```
+2. Install the required packages:
+   ```
+   pip install -r requirements.txt
+   ```
 
 ## Requirements
 
-Python packages required for this project are listed in `requirements.txt`. They are automatically installed in the Docker container.
+Python packages required for this project are listed in `requirements.txt`. They are automatically installed in the Docker container for the production environment.
 
 ## Contributing
 
@@ -93,7 +129,3 @@ To contribute to this project:
 3. Commit your changes
 4. Push to the branch
 5. Create a new Pull Request
-
-## License
-
-GET SOME!
