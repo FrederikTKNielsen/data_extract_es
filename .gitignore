@@ -3,17 +3,14 @@ __pycache__/
 *.py[cod]
 
 # Data files
-*.txt
-*.xlsx
+/data/*.txt
+/output/*.xlsx
 
 # macOS
 .DS_Store
 
 # Output directory
 /output/
-
-# Data directory
-/data/
 
 # Keep .gitkeep files
 !data/.gitkeep
