@@ -1,7 +1,8 @@
 import requests
 import json
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 
 # Create 'data' folder if it doesn't exist
 if not os.path.exists('data'):
@@ -19,9 +20,7 @@ query_files = [f for f in os.listdir('query') if f.endswith('.json')]
 if not query_files:
     print("No JSON files found in the 'query' folder. Please add query files.")
     exit()
-
 url = os.environ.get('ELASTICSEARCH_URL')
-
 headers = {
     'Content-Type': 'application/json'
 }
