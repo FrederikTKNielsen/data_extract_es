@@ -103,20 +103,6 @@ Each script generates an Excel file in the `output/` directory with detailed dat
 - To modify Elasticsearch queries, edit the corresponding files in the `query/` directory.
 - To add new analysis scripts, create a new Python file and update the `app.py` file to include it in the `SCRIPTS` list.
 
-## Development
-
-To set up a development environment:
-
-1. Create a virtual environment:
-   ```
-   python -m venv venv
-   source venv/bin/activate  # On Windows use `venv\Scripts\activate`
-   ```
-2. Install the required packages:
-   ```
-   pip install -r requirements.txt
-   ```
-
 ## Requirements
 
 Python packages required for this project are listed in `requirements.txt`. They are automatically installed in the Docker container for the production environment.
