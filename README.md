@@ -49,35 +49,12 @@ ES_DATA_ANALYSE/
 To start the web interface for easy script execution:
 
 ```
+make build
 make run
 ```
 
 This will build the Docker image if necessary and start the Flask application. Access the web interface at `http://localhost:5001`.
 
-### Running All Scripts
-
-To run all scripts in the correct order:
-
-```
-make run-all
-```
-
-This will first run `request_data.py` to fetch the latest data, and then execute all other analysis scripts.
-
-### Running Individual Scripts
-
-To run a specific script:
-
-```
-make run-SCRIPTNAME
-```
-
-Replace SCRIPTNAME with the name of the script you want to run (without the .py extension).
-
-For example:
-```
-make run-energy_labels
-```
 
 ### Available Scripts
 
