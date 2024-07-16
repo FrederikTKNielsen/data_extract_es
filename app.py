@@ -7,7 +7,6 @@ import io
 import traceback
 import logging
 
-
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
 
@@ -30,23 +29,23 @@ SCRIPTS = [
 ]
 
 SCRIPT_DESCRIPTIONS = {
-"request_data.py": "Fetches the latest data from Elasticsearch",
-"brændeovn.py": "Analyzes wood stove data",
-"building_area.py": "Processes building area information",
-"construction_years.py": "Analyzes building construction years",
-"energy_label_age.py": "Examines the age of energy labels",
-"energy_labels_year_of_contruction.py": "Correlates energy labels with construction years",
-"energy_labels.py": "Provides an overview of energy label distribution",
-"heating_matrix.py": "Analyzes heating installation types and mediums",
-"supplementary_heating.py": "Examines supplementary heating systems",
-"unit_usage_140_vs_energy_label_validity.py": "Analyzes energy label validity for specific unit usage [140]",
-"units_usage_energy_label_validity.py": "Examines energy label validity across different unit usages [120, 121, 122, 130, 131, 132]",
-"null_heating_installation.py": "Analyzes mediums with no heating installation types",
-"buildings_1000.py" : "Analyzes building energy label where construction year = 1000",
-"units_usage_all_energy_label_validity.py" : "Examines energy label validity across all unit usages",
-"large_buildings_energy_labels.py" : "analysis of energy labels for large buildings (1000+ m²), excluding private unit usage codes",
-"Download All Results" : "Downloads all .py except calling the request_data.py",
-"Run All Scripts" : "Runs every with request_data.py running as the first for getting data"
+    "request_data.py": "Fetches the latest data from Elasticsearch",
+    "brændeovn.py": "Analyzes wood stove data",
+    "building_area.py": "Processes building area information",
+    "construction_years.py": "Analyzes building construction years",
+    "energy_label_age.py": "Examines the age of energy labels",
+    "energy_labels_year_of_contruction.py": "Correlates energy labels with construction years",
+    "energy_labels.py": "Provides an overview of energy label distribution",
+    "heating_matrix.py": "Analyzes heating installation types and mediums",
+    "supplementary_heating.py": "Examines supplementary heating systems",
+    "unit_usage_140_vs_energy_label_validity.py": "Analyzes energy label validity for specific unit usage [140]",
+    "units_usage_energy_label_validity.py": "Examines energy label validity across different unit usages [120, 121, 122, 130, 131, 132]",
+    "null_heating_installation.py": "Analyzes mediums with no heating installation types",
+    "buildings_1000.py" : "Analyzes building energy label where construction year = 1000",
+    "units_usage_all_energy_label_validity.py" : "Examines energy label validity across all unit usages",
+    "large_buildings_energy_labels.py" : "analysis of energy labels for large buildings (1000+ m²), excluding private unit usage codes",
+    "Download All Results" : "Downloads all .py except calling the request_data.py",
+    "Run All Scripts" : "Runs every with request_data.py running as the first for getting data"
 }
 
 last_run_times = {}
@@ -77,6 +76,9 @@ def run_script(script_name):
                 app.logger.error(error_msg)
                 return jsonify({'error': error_msg}), 500
             
+            if script_name == 'request_data.py':
+                return jsonify({'message': f'Script {script_name} executed successfully. No output file generated.'}), 200
+            
             output_file = f"{script_name[:-3]}.xlsx"
             output_path = os.path.join('/app/output', output_file)
             if os.path.exists(output_path):
@@ -92,6 +94,9 @@ def run_script(script_name):
 @app.route('/download/<script_name>')
 def download_file(script_name):
     app.logger.info(f"Download requested for script: {script_name}")
+    
+    if script_name == 'request_data.py':
+        return jsonify({'message': 'No file to download for request_data.py'}), 200
     
     if script_name.endswith('.py'):
         file_name = f"{script_name[:-3]}.xlsx"
@@ -139,6 +144,9 @@ def download_all():
 def get_log(script_name):
     if script_name == 'all':
         return "Logs for individual scripts are available in their respective log files.", 200
+    
+    if script_name == 'request_data.py':
+        return jsonify({'message': 'No log file for request_data.py'}), 200
     
     log_file = f"{script_name[:-3]}.log"
     log_path = os.path.join('/app/logs', log_file)

@@ -148,12 +148,10 @@
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('status').innerText = data.message;
-                    if (scriptName !== 'all') {
+                    if (scriptName !== 'all' && scriptName !== 'request_data.py') {
                         downloadFile(scriptName);
-                        updateLog(scriptName);
-                    } else {
-                        document.getElementById('log-viewer').innerText = "Logs for individual scripts are available in their respective log files.";
                     }
+                    updateLog(scriptName);
                 })
                 .catch(error => {
                     document.getElementById('status').innerText = `Error running script`;
@@ -163,28 +161,33 @@
         }
 
         function downloadFile(scriptName) {
-            const fileName = `${scriptName.replace('.py', '')}.xlsx`;
-            fetch(`/download/${scriptName}`)
-                .then(response => {
-                    if (response.ok) {
-                        return response.blob();
-                    }
-                    return response.json().then(err => { throw new Error(err.error || 'Unknown error'); });
-                })
-                .then(blob => {
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.style.display = 'none';
-                    a.href = url;
-                    a.download = fileName;
-                    document.body.appendChild(a);
-                    a.click();
-                    window.URL.revokeObjectURL(url);
-                })
-                .catch(error => {
-                    console.error('Error downloading file:', error);
-                    document.getElementById('error-message').innerText = `Error downloading file: ${error.message}`;
-                });
+        if (scriptName === 'request_data.py') {
+            console.log('No file to download for request_data.py');
+            return;
+        }
+        
+        const fileName = `${scriptName.replace('.py', '')}.xlsx`;
+        fetch(`/download/${scriptName}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.blob();
+                }
+                return response.json().then(err => { throw new Error(err.error || 'Unknown error'); });
+            })
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => {
+                console.error('Error downloading file:', error);
+                document.getElementById('error-message').innerText = `Error downloading file: ${error.message}`;
+            });
         }
 
         function downloadAllResults() {
@@ -197,15 +200,20 @@
         }
 
         function updateLog(scriptName) {
-            fetch(`/log/${scriptName}`)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('log-viewer').innerText = data;
-                })
-                .catch(error => {
-                    console.error('Error fetching log:', error);
-                    document.getElementById('log-viewer').innerText = 'Error fetching log';
-                });
+        if (scriptName === 'request_data.py') {
+            document.getElementById('log-viewer').innerText = 'No log file for request_data.py';
+            return;
+        }
+        
+        fetch(`/log/${scriptName}`)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('log-viewer').innerText = data;
+            })
+            .catch(error => {
+                console.error('Error fetching log:', error);
+                document.getElementById('log-viewer').innerText = 'Error fetching log';
+            });
         }
 
         // Dark mode toggle and preference
