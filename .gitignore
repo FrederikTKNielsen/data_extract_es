@@ -13,6 +13,7 @@ __pycache__/
 # Keep .gitkeep files
 !data/.gitkeep
 !output/.gitkeep
+!logs/.gitkeep
 
 # Docker
 .docker
