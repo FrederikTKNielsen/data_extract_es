@@ -5,6 +5,7 @@ __pycache__/
 # Data files
 /data/*.txt
 /output/*.xlsx
+/logs/*.log
 
 # macOS
 .DS_Store

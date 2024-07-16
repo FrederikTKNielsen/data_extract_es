@@ -1,11 +1,15 @@
-from flask import Flask, render_template, jsonify, send_file, request
+from flask import Flask, render_template, jsonify, send_file, abort
 import subprocess
 import os
 import datetime
 import zipfile
 import io
+import traceback
+import logging
+
 
 app = Flask(__name__)
+logging.basicConfig(level=logging.DEBUG)
 
 SCRIPTS = [
     'request_data.py',
@@ -18,7 +22,11 @@ SCRIPTS = [
     'heating_matrix.py',
     'supplementary_heating.py',
     'unit_usage_140_vs_energy_label_validity.py',
-    'units_usage_energy_label_validity.py'
+    'units_usage_energy_label_validity.py',
+    'null_heating_installation.py',
+    'buildings_1000.py',
+    'units_usage_all_energy_label_validity.py',
+    'large_buildings_energy_labels.py',
 ]
 
 SCRIPT_DESCRIPTIONS = {
@@ -31,8 +39,12 @@ SCRIPT_DESCRIPTIONS = {
 "energy_labels.py": "Provides an overview of energy label distribution",
 "heating_matrix.py": "Analyzes heating installation types and mediums",
 "supplementary_heating.py": "Examines supplementary heating systems",
-"unit_usage_140_vs_energy_label_validity.py": "Analyzes energy label validity for specific unit usage",
-"units_usage_energy_label_validity.py": "Examines energy label validity across different unit usages",
+"unit_usage_140_vs_energy_label_validity.py": "Analyzes energy label validity for specific unit usage [140]",
+"units_usage_energy_label_validity.py": "Examines energy label validity across different unit usages [120, 121, 122, 130, 131, 132]",
+"null_heating_installation.py": "Analyzes mediums with no heating installation types",
+"buildings_1000.py" : "Analyzes building energy label where construction year = 1000",
+"units_usage_all_energy_label_validity.py" : "Examines energy label validity across all unit usages",
+"large_buildings_energy_labels.py" : "analysis of energy labels for large buildings (1000+ m²), excluding private unit usage codes",
 "Download All Results" : "Downloads all .py except calling the request_data.py",
 "Run All Scripts" : "Runs every with request_data.py running as the first for getting data"
 }
@@ -50,26 +62,62 @@ def run_script(script_name):
     
     try:
         if script_name == 'all':
-            subprocess.run(['python', 'request_data.py'], check=True)
-            last_run_times['request_data.py'] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            for script in SCRIPTS[1:]:
-                subprocess.run(['python', script], check=True)
-                last_run_times[script] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+            results = []
+            for script in SCRIPTS:
+                result = subprocess.run(['python', script], capture_output=True, text=True)
+                if result.returncode != 0:
+                    results.append({'script': script, 'status': 'failed', 'error': result.stderr})
+                else:
+                    results.append({'script': script, 'status': 'success'})
+            return jsonify({'message': 'All scripts executed', 'results': results})
         else:
-            subprocess.run(['python', script_name], check=True)
-            last_run_times[script_name] = datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        
-        return jsonify({'message': f'Script {script_name} executed successfully'})
-    except subprocess.CalledProcessError as e:
-        return jsonify({'error': f'Script {script_name} failed: {str(e)}'}), 500
+            result = subprocess.run(['python', script_name], capture_output=True, text=True)
+            if result.returncode != 0:
+                error_msg = f"Script {script_name} failed with error:\n{result.stderr}"
+                app.logger.error(error_msg)
+                return jsonify({'error': error_msg}), 500
+            
+            output_file = f"{script_name[:-3]}.xlsx"
+            output_path = os.path.join('/app/output', output_file)
+            if os.path.exists(output_path):
+                return jsonify({'message': f'Script {script_name} executed successfully'})
+            else:
+                return jsonify({'warning': f'Script {script_name} executed, but no output file was created'}), 200
+    
+    except Exception as e:
+        error_msg = f"Error running {script_name}: {str(e)}\n{traceback.format_exc()}"
+        app.logger.error(error_msg)
+        return jsonify({'error': error_msg}), 500
 
 @app.route('/download/<script_name>')
 def download_file(script_name):
-    file_name = f"{script_name.replace('.py', '')}.xlsx"
-    file_path = os.path.join('output', file_name)
-    if os.path.exists(file_path):
-        return send_file(file_path, as_attachment=True)
+    app.logger.info(f"Download requested for script: {script_name}")
+    
+    if script_name.endswith('.py'):
+        file_name = f"{script_name[:-3]}.xlsx"
+        file_path = os.path.join('/app/output', file_name)
+    elif script_name.endswith('.log'):
+        file_path = os.path.join('/app/logs', script_name)
     else:
+        app.logger.error(f"Invalid file type requested: {script_name}")
+        return jsonify({'error': 'Invalid file type'}), 400
+
+    app.logger.info(f"Looking for file at: {file_path}")
+
+    if os.path.exists(file_path):
+        try:
+            app.logger.info(f"File found. Attempting to send: {file_path}")
+            return send_file(file_path, as_attachment=True)
+        except Exception as e:
+            app.logger.error(f"Error sending file {file_path}: {str(e)}")
+            return jsonify({'error': f'Error sending file: {str(e)}'}), 500
+    else:
+        app.logger.warning(f"File not found: {file_path}")
+        # List contents of output directory
+        output_dir = '/app/output'
+        app.logger.info(f"Contents of {output_dir}:")
+        for file in os.listdir(output_dir):
+            app.logger.info(f"- {file}")
         return jsonify({'error': 'File not found'}), 404
 
 @app.route('/download_all')
@@ -89,10 +137,14 @@ def download_all():
 
 @app.route('/log/<script_name>')
 def get_log(script_name):
-    log_file = f"logs/{script_name}.log"
-    if os.path.exists(log_file):
-        with open(log_file, 'r') as file:
-            return file.read()
+    if script_name == 'all':
+        return "Logs for individual scripts are available in their respective log files.", 200
+    
+    log_file = f"{script_name[:-3]}.log"
+    log_path = os.path.join('/app/logs', log_file)
+    if os.path.exists(log_path):
+        with open(log_path, 'r') as file:
+            return file.read(), 200
     else:
         return "No log available", 404
 

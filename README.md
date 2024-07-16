@@ -74,6 +74,10 @@ This will build the Docker image if necessary and start the Flask application. A
 - `supplementary_heating.py`: Examines supplementary heating systems.
 - `unit_usage_140_vs_energy_label_validity.py`: Analyzes energy label validity for specific unit usage.
 - `units_usage_energy_label_validity.py`: Examines energy label validity across different unit usages.
+- `null_heating_installation.py`: Analyzes mediums with no heating installation types.
+- `buildings_1000.py` : Analyzes building energy label where construction year = 1000.
+- `units_usage_all_energy_label_validity.py` : Examines energy label validity across all unit usages.
+- `large_buildings_energy_labels.py` : analysis of energy labels for large buildings (1000+ m²), excluding private unit usage codes.
 
 ## Output
 

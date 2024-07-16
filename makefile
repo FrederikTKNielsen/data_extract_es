@@ -1,26 +1,30 @@
-.PHONY: build run run-prod stop clean
+.PHONY: build run run-prod stop clean logs logs-prod
+
+DOCKER_COMPOSE := docker compose
+COMPOSE_FILE := docker-compose.yml
+COMPOSE_FILE_PROD := docker-compose.prod.yml
 
 build:
-	docker-compose build
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) build
 
 run:
-	docker-compose up
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) up
 
 run-prod:
-	docker-compose -f docker-compose.prod.yml up -d
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE_PROD) up -d
 
 stop:
-	docker-compose down
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) down
 
 stop-prod:
-	docker-compose -f docker-compose.prod.yml down
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE_PROD) down
 
 clean:
-	docker-compose down -v
-	docker-compose -f docker-compose.prod.yml down -v
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) down -v
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE_PROD) down -v
 
 logs:
-	docker-compose logs -f
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE) logs -f
 
 logs-prod:
-	docker-compose -f docker-compose.prod.yml logs -f
+	$(DOCKER_COMPOSE) -f $(COMPOSE_FILE_PROD) logs -f

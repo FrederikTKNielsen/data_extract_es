@@ -24,6 +24,7 @@
             border: 1px solid #ccc;
             border-radius: 4px;
             cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
         }
         body.dark-mode button {
             background-color: #555;
@@ -65,6 +66,7 @@
             border: 1px solid #ccc;
             max-height: 300px;
             overflow-y: auto;
+            transition: background-color 0.3s, border-color 0.3s;
         }
         body.dark-mode #log-viewer {
             background-color: #444;
@@ -111,52 +113,78 @@
         input:checked + .slider:before {
             transform: translateX(26px);
         }
+        #error-message {
+            color: red;
+            margin-top: 10px;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <h1>BA Data Analysis using Elastic search data - always run request_data first</h1>
     <label class="switch">
-        <input type="checkbox" onclick="toggleDarkMode()">
+        <input type="checkbox" id="darkModeToggle">
         <span class="slider"></span>
     </label>
     <button onclick="runScript('all')">Run All Scripts</button>
-    <br></br> 
+    <br><br>
     {% for script in scripts %}
         <div class="tooltip">
             <button onclick="runScript('{{ script }}')">Run {{ script }}</button>
             <span class="tooltiptext">{{ descriptions[script] }}</span>
         </div>
     {% endfor %}
-    <br></br> 
+    <br><br>
     <button onclick="downloadAllResults()">Download All Results</button>
     <div id="status"></div>
+    <div id="error-message"></div>
     <div id="log-viewer"></div>
 
     <script>
         function runScript(scriptName) {
             document.getElementById('status').innerText = `Running ${scriptName}...`;
+            document.getElementById('error-message').innerText = '';
             fetch(`/run/${scriptName}`)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('status').innerText = data.message;
-                    if (scriptName !== 'all' && scriptName !== 'request_data.py') {
+                    if (scriptName !== 'all') {
                         downloadFile(scriptName);
+                        updateLog(scriptName);
+                    } else {
+                        document.getElementById('log-viewer').innerText = "Logs for individual scripts are available in their respective log files.";
                     }
-                    updateLog(scriptName);
                 })
                 .catch(error => {
-                    document.getElementById('status').innerText = `Error: ${error}`;
+                    document.getElementById('status').innerText = `Error running script`;
+                    document.getElementById('error-message').innerText = `Error details: ${error.message}`;
+                    console.error('Error running script:', error);
                 });
         }
 
         function downloadFile(scriptName) {
             const fileName = `${scriptName.replace('.py', '')}.xlsx`;
-            const link = document.createElement('a');
-            link.href = `/download/${scriptName}`;
-            link.download = fileName;
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+            fetch(`/download/${scriptName}`)
+                .then(response => {
+                    if (response.ok) {
+                        return response.blob();
+                    }
+                    return response.json().then(err => { throw new Error(err.error || 'Unknown error'); });
+                })
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = fileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('Error downloading file:', error);
+                    document.getElementById('error-message').innerText = `Error downloading file: ${error.message}`;
+                });
         }
 
         function downloadAllResults() {
@@ -176,15 +204,19 @@
                 })
                 .catch(error => {
                     console.error('Error fetching log:', error);
+                    document.getElementById('log-viewer').innerText = 'Error fetching log';
                 });
         }
 
-        // Check for saved dark mode preference
+        // Dark mode toggle and preference
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('change', toggleDarkMode);
+
         if (localStorage.getItem('darkMode') === 'true') {
             document.body.classList.add('dark-mode');
-            document.querySelector('.switch input').checked = true;
+            darkModeToggle.checked = true;
         }
     </script>
-    <p> Get your data! OBS: Remember to be on VMAS network or VPN</p>
+    <p>Get your data! OBS: Remember to be on VMAS network or VPN</p>
 </body>
 </html>

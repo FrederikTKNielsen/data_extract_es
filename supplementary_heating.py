@@ -7,32 +7,43 @@ def parse_elasticsearch_output(file_path):
     with open(file_path, 'r') as file:
         data = json.load(file)
     
+    total_hits = data['hits']['total']['value']
+    print(f"Total hits from Elasticsearch: {total_hits}")
+
     results = []
-    
+    total_processed = 0
+
     for municipality in data['aggregations']['municipalities']['buckets']:
         municipality_code = municipality['key']
-        
+        municipality_count = municipality['doc_count']
+        total_processed += municipality_count
+
         for installation in municipality['heatingInstallations']['buckets']:
             installation_code = installation['key']
-            
-            medium_counts = defaultdict(int)
+            installation_count = installation['doc_count']
+
+            supplementary_count = 0
             for medium in installation['supplementary_heating']['buckets']:
                 medium_code = medium['key']
                 count = medium['doc_count']
-                medium_counts[medium_code] = count
-            
-            # If there are no heating mediums, we still want to count the installations
-            if not medium_counts:
-                medium_counts[''] = installation['doc_count']
-            
-            for medium_code, count in medium_counts.items():
+                supplementary_count += count
                 results.append({
                     'municipality_code': municipality_code,
                     'installation_code': installation_code,
                     'medium_code': medium_code,
                     'count': count
                 })
-    
+
+            # Add a row for buildings without supplementary heating
+            if supplementary_count < installation_count:
+                results.append({
+                    'municipality_code': municipality_code,
+                    'installation_code': installation_code,
+                    'medium_code': 'No supplementary',
+                    'count': installation_count - supplementary_count
+                })
+
+    print(f"Total processed: {total_processed}")
     return pd.DataFrame(results)
 
 
