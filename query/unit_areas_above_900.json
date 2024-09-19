@@ -33,6 +33,13 @@
           "exists": {
             "field": "bbr_property_relationship.property_ownership_code"
           }
+        },
+        {
+          "range": {
+            "bbr_unit.enh026_unit_total_area": {
+              "gte": 900
+            }
+          }
         }
       ]
     }
@@ -50,10 +57,13 @@
             "size": 20
           },
           "aggs": {
-            "building_areas": {
-              "histogram": {
-                "field": "bbr_building.byg038_total_building_area",
-                "interval": 300
+            "large_units": {
+              "filter": {
+                "range": {
+                  "bbr_unit.enh026_unit_total_area": {
+                    "gte": 900
+                  }
+                }
               }
             }
           }

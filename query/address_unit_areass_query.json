@@ -1,0 +1,33 @@
+{
+  "size": 1000,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "term": {
+            "bbr_unit.enh020_units_usage": 140
+          }
+        },
+        {
+          "bool": {
+            "should": [
+              {
+                "term": {
+                  "bbr_unit.enh026_unit_total_area": 0
+                }
+              },
+              {
+                "range": {
+                  "bbr_unit.enh026_unit_total_area": {
+                    "gte": 900
+                  }
+                }
+              }
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "_source": ["dar_address.address_designation", "bbr_unit.enh020_units_usage", "bbr_unit.enh026_unit_total_area"]
+}

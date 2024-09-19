@@ -35,15 +35,6 @@ def parse_elasticsearch_output(file_path):
                     'area_range': f"{min_area}-{max_area}",
                     'count': count
                 })
-            
-            # Add the 900+ bucket
-            large_buildings_count = usage['large_buildings']['doc_count']
-            results.append({
-                'municipality_code': municipality_code,
-                'unit_usage': unit_usage,
-                'area_range': "900+",
-                'count': large_buildings_count
-            })
     
     return pd.DataFrame(results)
 

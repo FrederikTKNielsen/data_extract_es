@@ -12,8 +12,11 @@ logging.basicConfig(level=logging.DEBUG)
 
 SCRIPTS = [
     'request_data.py',
-    'brændeovn.py',
+    'brændeovn_pejs.py',
+    'address_brændeovn_pejs_query.py',
     'building_area.py',
+    'unit_areas.py',
+    'address_unit_areass_query.py',
     'construction_years.py',
     'energy_label_age.py',
     'energy_labels_year_of_construction.py',
@@ -30,8 +33,11 @@ SCRIPTS = [
 
 SCRIPT_DESCRIPTIONS = {
     "request_data.py": "Fetches the latest data from Elasticsearch",
-    "brændeovn.py": "Analyzes wood stove data",
+    "brændeovn_pejs.py": "Analyzes wood stove data",
+    "address_brændeovn_pejs_query.py": "Processes wood stove data adress information",
     "building_area.py": "Processes building area information",
+    "unit_areas.py": "Processes unit area information",
+    "address_unit_areass_query.py": "Processes unit area adress information",
     "construction_years.py": "Analyzes building construction years",
     "energy_label_age.py": "Examines the age of energy labels",
     "energy_labels_year_of_construction.py": "Correlates energy labels with construction years",
