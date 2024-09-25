@@ -1,10 +1,11 @@
-from flask import Flask, render_template, jsonify, send_file, abort
+from flask import Flask, render_template, jsonify, send_file, abort, request
 import subprocess
 import os
 import zipfile
 import io
 import traceback
 import logging
+import json
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -92,13 +93,140 @@ SCRIPT_DESCRIPTIONS = {
     "Run All Scripts": "Runs all scripts, starting with request_data.py for initial data retrieval"
 }
 
-
 last_run_times = {}
 
 @app.route('/')
 def index():
-    return render_template('index.html', scripts=SCRIPTS, descriptions=SCRIPT_DESCRIPTIONS, last_run_times=last_run_times)
+    query_files = [f for f in os.listdir('query') if f.endswith('.json')]
+    return render_template('index.html', scripts=SCRIPTS, descriptions=SCRIPT_DESCRIPTIONS, last_run_times=last_run_times, query_files=query_files)
 
+@app.route('/run_analysis/<script_name>')
+def run_analysis(script_name):
+    if script_name not in SCRIPTS:
+        return jsonify({'error': 'Invalid script name'}), 400
+
+    try:
+        # Check if corresponding data file exists
+        data_file = f"/app/data/{script_name.replace('.py', '')}.txt"
+        if not os.path.exists(data_file):
+            # Run the corresponding query
+            query_file = f"/app/query/{script_name.replace('.py', '')}.json"
+            if not os.path.exists(query_file):
+                return jsonify({'error': f'Query file {query_file} not found'}), 404
+
+            result = subprocess.run(['python', 'request_data.py', '--query-file', query_file], capture_output=True, text=True)
+            if result.returncode != 0:
+                error_msg = f"Request data failed with error:\n{result.stderr}"
+                app.logger.error(error_msg)
+                return jsonify({'error': error_msg}), 500
+
+        # Run the script
+        result = subprocess.run(['python', script_name], capture_output=True, text=True)
+
+        if result.returncode != 0:
+            error_msg = f"Script {script_name} failed with error:\n{result.stderr}"
+            app.logger.error(error_msg)
+            return jsonify({'error': error_msg}), 500
+
+        return jsonify({'message': f'Analysis {script_name} executed successfully'}), 200
+
+    except Exception as e:
+        error_msg = f"Error running analysis {script_name}: {str(e)}\n{traceback.format_exc()}"
+        app.logger.error(error_msg)
+        return jsonify({'error': error_msg}), 500
+    
+@app.route('/run_query/<query_name>')
+def run_query(query_name):
+    try:
+        query_file = os.path.join('query', query_name)
+        if not os.path.exists(query_file):
+            return jsonify({'error': f'Query file {query_name} not found'}), 404
+
+        result = subprocess.run(['python', 'request_data.py', '--query-file', query_file], capture_output=True, text=True)
+
+        if result.returncode != 0:
+            error_msg = f"Request data failed with error:\n{result.stderr}"
+            app.logger.error(error_msg)
+            return jsonify({'error': error_msg}), 500
+
+        output_file = os.path.splitext(query_name)[0] + '.txt'
+        return jsonify({'message': f'Query {query_name} executed successfully', 'output_file': output_file}), 200
+
+    except Exception as e:
+        error_msg = f"Error running query {query_name}: {str(e)}\n{traceback.format_exc()}"
+        app.logger.error(error_msg)
+        return jsonify({'error': error_msg}), 500
+
+@app.route('/run_custom_query', methods=['POST'])
+def run_custom_query():
+    try:
+        custom_query = request.json.get('custom_query')
+        if not custom_query:
+            return jsonify({'error': 'No custom query provided'}), 400
+
+        # Ensure custom_query is valid JSON
+        try:
+            json_query = json.loads(custom_query)
+        except json.JSONDecodeError as e:
+            return jsonify({'error': f'Invalid JSON: {str(e)}'}), 400
+
+        result = subprocess.run(['python', 'request_data.py', '--custom-query', json.dumps(json_query)], capture_output=True, text=True)
+
+        if result.returncode != 0:
+            error_msg = f"Request data failed with error:\n{result.stderr}"
+            app.logger.error(error_msg)
+            return jsonify({'error': error_msg}), 500
+
+        # Find the latest custom_query output file
+        data_files = [f for f in os.listdir('data') if f.startswith('custom_query_') and f.endswith('.txt')]
+        if data_files:
+            latest_file = max(data_files, key=lambda x: os.path.getctime(os.path.join('data', x)))
+        else:
+            latest_file = None
+
+        return jsonify({'message': 'Custom query executed successfully', 'output_file': latest_file}), 200
+
+    except Exception as e:
+        error_msg = f"Error running custom query: {str(e)}\n{traceback.format_exc()}"
+        app.logger.error(error_msg)
+        return jsonify({'error': error_msg}), 500
+
+@app.route('/download_query_result/<filename>')
+def download_query_result(filename):
+    file_path = os.path.join('data', filename)
+    if os.path.exists(file_path):
+        try:
+            return send_file(file_path, as_attachment=True)
+        except Exception as e:
+            app.logger.error(f"Error sending file {file_path}: {str(e)}")
+            return jsonify({'error': f'Error sending file: {str(e)}'}), 500
+    else:
+        return jsonify({'error': 'File not found'}), 404
+    
+@app.route('/download_output/<filename>')
+def download_output(filename):
+    file_path = os.path.join('/app/output', filename)
+    if os.path.exists(file_path):
+        try:
+            return send_file(file_path, as_attachment=True)
+        except Exception as e:
+            app.logger.error(f"Error sending file {file_path}: {str(e)}")
+            return jsonify({'error': f'Error sending file: {str(e)}'}), 500
+    else:
+        return jsonify({'error': 'File not found'}), 404
+
+@app.route('/download_query/<query_name>')
+def download_query(query_name):
+    file_path = os.path.join('query', query_name)
+    if os.path.exists(file_path):
+        try:
+            return send_file(file_path, as_attachment=True)
+        except Exception as e:
+            app.logger.error(f"Error sending file {file_path}: {str(e)}")
+            return jsonify({'error': f'Error sending file: {str(e)}'}), 500
+    else:
+        return jsonify({'error': 'File not found'}), 404
+    
 @app.route('/run/<script_name>')
 def run_script(script_name):
     if script_name not in SCRIPTS and script_name != 'all':

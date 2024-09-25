@@ -149,10 +149,24 @@
             margin-top: 10px;
             font-weight: bold;
         }
+        /* Styles for select dropdown */
+        select {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        body.dark-mode select {
+            background-color: #555;
+            color: #fff;
+            border-color: #777;
+        }
     </style>
 </head>
 <body>
-    <h1>BA Data Analysis using Elastic search data</h1>
+    <h1>BA Data Analysis using Elasticsearch Data</h1>
     <label class="switch">
         <input type="checkbox" id="darkModeToggle">
         <span class="slider"></span>
@@ -160,39 +174,43 @@
 
     <!-- Run All and Download All Container -->
     <div class="container">
-        <h2>Want it all? click "Run All Scripts" followed by "Download All Results" </h2>
+        <h2>Want it all? Click "Run All Scripts" Followed By "Download All Results"</h2>
         <button class="special" onclick="runScript('all')">Run All Scripts</button>
         <button class="special" onclick="downloadAllResults()">Download All Results</button>
     </div>
 
-    <!-- Prerequisite Container -->
+    <!-- Individual Scripts and Queries Dropdown -->
     <div class="container">
-        <h2>Prerequisite: Run Request Data before running individual scripts</h2>
-        <button class="special" onclick="runScript('request_data.py')">Run request_data.py</button>
+        <h2>Run Individual Analysis And Download Data Or Download The Query</h2>
+        <select id="scriptQuerySelect">
+            <option value="" disabled selected>Select an analysis</option>
+            {% for script in scripts %}
+                {% if script != 'request_data.py' and script != 'app.py' %}
+                    <option value="{{ script }}">{{ script.replace('.py', '') }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+        <button onclick="runSelectedAnalysis()">Run Selected Analysis</button>
+        <button onclick="downloadAnalysisOutput()">Download Output</button>
+        <button onclick="downloadAnalysisQuery()">Download Query</button>
     </div>
-    
-    <!-- Individual Scripts Container -->
+
+    <!-- Custom Query Container -->
     <div class="container">
-        <h2>Run Individual Scripts</h2>
-        {% for script in scripts %}
-            {% if script != 'request_data.py' %}
-                <div class="tooltip">
-                    <button onclick="runScript('{{ script }}')">Run {{ script }}</button>
-                    <span class="tooltiptext">{{ descriptions[script] }}</span>
-                </div>
-            {% endif %}
-        {% endfor %}
+        <h2>Run Custom Query</h2>
+        <textarea id="customQuery" rows="15" cols="100" placeholder="Enter your custom Elasticsearch query in JSON format here"></textarea><br>
+        <button onclick="runCustomQuery()">Run Custom Query</button>
     </div>
 
     <!-- Script Log Viewer -->
     <div class="container">
-        <h2>Script Logs</h2>
+        <h2>Logs</h2>
         <div id="status"></div>
         <div id="error-message"></div>
         <div id="log-viewer"></div>
     </div>
 
-    <p>Get your data! OBS: Remember to be on VMAS network or VPN</p>
+    <p>Get your data! Note: Remember to be on the VMAS network or VPN</p>
 
     <script>
         function runScript(scriptName) {
@@ -201,10 +219,10 @@
             fetch(`/run/${scriptName}`)
                 .then(response => response.json())
                 .then(data => {
-                    document.getElementById('status').innerText = data.message;
-                    if (scriptName !== 'all' && scriptName !== 'request_data.py') {
-                        downloadFile(scriptName);
+                    if (data.error) {
+                        throw new Error(data.error);
                     }
+                    document.getElementById('status').innerText = data.message;
                     updateLog(scriptName);
                 })
                 .catch(error => {
@@ -214,13 +232,38 @@
                 });
         }
 
-        function downloadFile(scriptName) {
-            if (scriptName === 'request_data.py') {
-                console.log('No file to download for request_data.py');
+        function runSelectedAnalysis() {
+            const scriptName = document.getElementById('scriptQuerySelect').value;
+            if (!scriptName) {
+                alert('Please select an analysis.');
                 return;
             }
-            const fileName = `${scriptName.replace('.py', '')}.xlsx`;
-            fetch(`/download/${scriptName}`)
+            document.getElementById('status').innerText = `Running analysis ${scriptName}...`;
+            document.getElementById('error-message').innerText = '';
+            fetch(`/run_analysis/${scriptName}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        throw new Error(data.error);
+                    }
+                    document.getElementById('status').innerText = data.message;
+                    updateLog(scriptName);
+                })
+                .catch(error => {
+                    document.getElementById('status').innerText = `Error running analysis`;
+                    document.getElementById('error-message').innerText = `Error details: ${error.message}`;
+                    console.error('Error running analysis:', error);
+                });
+        }
+
+        function downloadAnalysisOutput() {
+            const scriptName = document.getElementById('scriptQuerySelect').value;
+            if (!scriptName) {
+                alert('Please select an analysis.');
+                return;
+            }
+            const outputFileName = `${scriptName.replace('.py', '')}.xlsx`;
+            fetch(`/download_output/${outputFileName}`)
                 .then(response => {
                     if (response.ok) {
                         return response.blob();
@@ -232,15 +275,83 @@
                     const a = document.createElement('a');
                     a.style.display = 'none';
                     a.href = url;
-                    a.download = fileName;
+                    a.download = outputFileName;
                     document.body.appendChild(a);
                     a.click();
                     window.URL.revokeObjectURL(url);
                 })
                 .catch(error => {
-                    console.error('Error downloading file:', error);
-                    document.getElementById('error-message').innerText = `Error downloading file: ${error.message}`;
+                    console.error('Error downloading output:', error);
+                    document.getElementById('error-message').innerText = `Error downloading output: ${error.message}`;
                 });
+        }
+
+        function downloadAnalysisQuery() {
+            const scriptName = document.getElementById('scriptQuerySelect').value;
+            if (!scriptName) {
+                alert('Please select an analysis.');
+                return;
+            }
+            const queryFileName = `${scriptName.replace('.py', '.json')}`;
+            fetch(`/download_query/${queryFileName}`)
+                .then(response => {
+                    if (response.ok) {
+                        return response.blob();
+                    }
+                    return response.json().then(err => { throw new Error(err.error || 'Unknown error'); });
+                })
+                .then(blob => {
+                    const url = window.URL.createObjectURL(blob);
+                    const a = document.createElement('a');
+                    a.style.display = 'none';
+                    a.href = url;
+                    a.download = queryFileName;
+                    document.body.appendChild(a);
+                    a.click();
+                    window.URL.revokeObjectURL(url);
+                })
+                .catch(error => {
+                    console.error('Error downloading query:', error);
+                    document.getElementById('error-message').innerText = `Error downloading query: ${error.message}`;
+                });
+        }
+
+        function runCustomQuery() {
+            const customQuery = document.getElementById('customQuery').value;
+            if (!customQuery) {
+                alert('Please enter a custom query.');
+                return;
+            }
+
+            document.getElementById('status').innerText = `Running custom query...`;
+            document.getElementById('error-message').innerText = '';
+            fetch('/run_custom_query', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ custom_query: customQuery })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    throw new Error(data.error);
+                }
+                document.getElementById('status').innerText = data.message;
+                updateLog('request_data.py');
+                if (data.output_file) {
+                    const downloadLink = document.createElement('a');
+                    downloadLink.href = `/download_query_result/${data.output_file}`;
+                    downloadLink.innerText = 'Download Query Result';
+                    downloadLink.style.display = 'block';
+                    document.getElementById('status').appendChild(downloadLink);
+                }
+            })
+            .catch(error => {
+                document.getElementById('status').innerText = `Error running custom query`;
+                document.getElementById('error-message').innerText = `Error details: ${error.message}`;
+                console.error('Error running custom query:', error);
+            });
         }
 
         function downloadAllResults() {
