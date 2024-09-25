@@ -94,7 +94,7 @@ ES_DATA_ANALYSE/
    ```
 
 ### Available Scripts
-
+   ```
 - `brændeovn_pejs.py`: Analyzes wood stove data.
 - `building_area.py`: Processes building area information.
 - `building_area_small.py`: Analyzes smaller building areas.
@@ -113,28 +113,37 @@ ES_DATA_ANALYSE/
 - `large_buildings_energy_labels.py` : analysis of energy labels for large buildings (1000+ m²), excluding private unit usage codes.
 - `year_extension_vs_construction.py` : Analyzes year of extension vs. construction year.
 - `9_heating_installation_null_mediums.py` : Analyzes data where there are no mediums or heating installation types.
+- Each script have a corresponding address script attached that gets a sample up to 1000 adresses based on the analysis
+   ```
 
 ## Output
+```
 - Each analysis script generates an Excel file in the output/ directory.
 - The output includes detailed data and a summary sheet containing key statistics.
 - These files are not tracked by Git to keep the repository size manageable.
+```
 
 ## Customization
 
 ### Modify Elasticsearch Queries:
+```
 - Edit the corresponding query files in the query/ directory.
 - The query files are named to match the analysis scripts (e.g., building_area.json corresponds to building_area.py).
-
+```
 ### Add New Analysis Scripts:
-- Place your new Python script in the scripts/ directory.
+```
+- Place your new Python script in the main directory.
 - Ensure the script is designed to process data from a corresponding query.
 - Update the SCRIPTS list in app.py to include your new script.
-
+```
 ### Web Interface Templates:
+```
 - The HTML templates are located in the templates/ directory.
 - Customize the web interface by editing index.html.
-
+```
 ## Requirements
+```
 - Python Packages: All required Python packages are listed in requirements.txt.
 - Docker: The application runs inside a Docker container, which handles all dependencies.
 - Environment Variables: Ensure the ELASTICSEARCH_URL is set in the .env file.
+```
