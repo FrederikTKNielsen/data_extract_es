@@ -1,13 +1,11 @@
 import json
 import pandas as pd
 import os
-import sys
 import logging
 
 logging.basicConfig(filename='/app/logs/unit_areas.log', level=logging.INFO, 
                     format='%(asctime)s - %(levelname)s - %(message)s')
 logging.info("Running updated unit_areas.py script")
-
 
 def parse_elasticsearch_output(file_path, is_above_900=False):
     with open(file_path, 'r') as file:
@@ -54,17 +52,20 @@ def parse_elasticsearch_output(file_path, is_above_900=False):
 
 if __name__ == "__main__":
     try:
+        # Define file paths relative to the main directory
         below_900_file = os.environ.get('BELOW_900_FILE', 'unit_areas_below_900.txt')
         above_900_file = os.environ.get('ABOVE_900_FILE', 'unit_areas_above_900.txt')
         output_file = os.environ.get('OUTPUT_FILE', 'unit_areas.xlsx')
 
-        logging.info(f"Below 900 File: {below_900_file}")
-        logging.info(f"Above 900 File: {above_900_file}")
-        logging.info(f"Output File: {output_file}")
+        below_900_file_path = os.path.join('data', below_900_file)
+        above_900_file_path = os.path.join('data', above_900_file)
+        output_path = os.path.join('output', output_file)
 
+        logging.info(f"Below 900 File: {below_900_file_path}")
+        logging.info(f"Above 900 File: {above_900_file_path}")
+        logging.info(f"Output File: {output_path}")
 
         # Parse below 900 data
-        below_900_file_path = f"/app/data/{below_900_file}"
         if not os.path.exists(below_900_file_path):
             logging.error(f"Below 900 input file not found at {below_900_file_path}")
             raise FileNotFoundError(f"Below 900 input file not found at {below_900_file_path}")
@@ -72,7 +73,6 @@ if __name__ == "__main__":
         df_below_900 = parse_elasticsearch_output(below_900_file_path)
 
         # Parse above 900 data
-        above_900_file_path = f"/app/data/{above_900_file}"
         if not os.path.exists(above_900_file_path):
             logging.error(f"Above 900 input file not found at {above_900_file_path}")
             raise FileNotFoundError(f"Above 900 input file not found at {above_900_file_path}")
@@ -93,8 +93,10 @@ if __name__ == "__main__":
 
         logging.info(f"Summary statistics calculated: Total={total_buildings}, Avg per range={avg_buildings_per_range.mean():.2f}, Max={max_buildings.max()}, Min={min_buildings.min()}")
         
+        # Ensure output directory exists
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+
         # Save to Excel
-        output_path = f"/app/output/{output_file}"
         with pd.ExcelWriter(output_path, engine='openpyxl') as writer:
             combined_df.to_excel(writer, sheet_name='Detailed Data', index=False)
             

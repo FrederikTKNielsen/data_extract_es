@@ -1,11 +1,11 @@
 from flask import Flask, render_template, jsonify, send_file, abort, request
 import subprocess
 import os
-import zipfile
-import io
 import traceback
 import logging
 import json
+import io
+import zipfile
 
 app = Flask(__name__)
 logging.basicConfig(level=logging.DEBUG)
@@ -50,6 +50,12 @@ SCRIPTS = [
     'address_large_buildings_energy_labels_query.py',
 ]
 
+# Map scripts to their required query files
+SCRIPT_QUERIES = {
+    'unit_areas.py': ['unit_areas_below_900.json', 'unit_areas_above_900.json'],
+    # Add other scripts here if they have special query requirements
+    # For all other scripts, we'll assume they use a single query file with the same name
+}
 
 SCRIPT_DESCRIPTIONS = {
     "request_data.py": "Fetches the latest data from Elasticsearch",
@@ -93,12 +99,58 @@ SCRIPT_DESCRIPTIONS = {
     "Run All Scripts": "Runs all scripts, starting with request_data.py for initial data retrieval"
 }
 
-last_run_times = {}
+last_run_times = []
 
 @app.route('/')
 def index():
     query_files = [f for f in os.listdir('query') if f.endswith('.json')]
     return render_template('index.html', scripts=SCRIPTS, descriptions=SCRIPT_DESCRIPTIONS, last_run_times=last_run_times, query_files=query_files)
+
+@app.route('/download_query/<script_name>')
+def download_query(script_name):
+    # Extract the base script name without extension
+    base_script_name = os.path.splitext(script_name)[0]
+    
+    # Check if the script has multiple query files
+    if script_name in SCRIPT_QUERIES:
+        query_files = SCRIPT_QUERIES[script_name]
+        file_paths = [os.path.join('query', qf) for qf in query_files]
+        
+        # Check if all query files exist
+        for fp in file_paths:
+            if not os.path.exists(fp):
+                return jsonify({'error': f'Query file {fp} not found'}), 404
+        
+        # Create a zip file in memory
+        zip_buffer = io.BytesIO()
+        with zipfile.ZipFile(zip_buffer, 'w') as zip_file:
+            for fp in file_paths:
+                zip_file.write(fp, arcname=os.path.basename(fp))
+        zip_buffer.seek(0)
+        zip_filename = f"{base_script_name}_queries.zip"
+        return send_file(
+            zip_buffer,
+            mimetype='application/zip',
+            as_attachment=True,
+            download_name=zip_filename  # For Flask >=2.0
+        )
+    else:
+        # Default case: one query file with the same name as the script
+        query_file_name = f"{base_script_name}.json"
+        file_path = os.path.join('query', query_file_name)
+        if os.path.exists(file_path):
+            try:
+                return send_file(
+                    file_path,
+                    mimetype='application/json',
+                    as_attachment=True,
+                    download_name=query_file_name  # For Flask >=2.0
+                )
+            except Exception as e:
+                app.logger.error(f"Error sending file {file_path}: {str(e)}")
+                return jsonify({'error': f'Error sending file: {str(e)}'}), 500
+        else:
+            return jsonify({'error': 'File not found'}), 404
 
 @app.route('/run_analysis/<script_name>')
 def run_analysis(script_name):
@@ -106,19 +158,41 @@ def run_analysis(script_name):
         return jsonify({'error': 'Invalid script name'}), 400
 
     try:
-        # Check if corresponding data file exists
-        data_file = f"/app/data/{script_name.replace('.py', '')}.txt"
-        if not os.path.exists(data_file):
-            # Run the corresponding query
-            query_file = f"/app/query/{script_name.replace('.py', '')}.json"
-            if not os.path.exists(query_file):
-                return jsonify({'error': f'Query file {query_file} not found'}), 404
+        # Extract the base script name without extension
+        base_script_name = os.path.splitext(script_name)[0]
 
-            result = subprocess.run(['python', 'request_data.py', '--query-file', query_file], capture_output=True, text=True)
-            if result.returncode != 0:
-                error_msg = f"Request data failed with error:\n{result.stderr}"
-                app.logger.error(error_msg)
-                return jsonify({'error': error_msg}), 500
+        # Determine the required data files and query files
+        data_files = []
+        query_files = []
+
+        # Check if the script requires special query files
+        if script_name in SCRIPT_QUERIES:
+            # For scripts with multiple query files
+            query_files = SCRIPT_QUERIES[script_name]
+            for query_file in query_files:
+                data_file = os.path.join('data', os.path.splitext(query_file)[0] + '.txt')
+                data_files.append(data_file)
+        else:
+            # Default case: one query file and one data file
+            query_file = f"{base_script_name}.json"
+            data_file = os.path.join('data', f"{base_script_name}.txt")
+            query_files = [query_file]
+            data_files = [data_file]
+
+        # Check if all required data files exist
+        missing_data_files = [df for df in data_files if not os.path.exists(df)]
+        if missing_data_files:
+            # Run the corresponding queries for missing data files
+            for qf in query_files:
+                query_file_path = os.path.join('query', qf)
+                if not os.path.exists(query_file_path):
+                    return jsonify({'error': f'Query file {query_file_path} not found'}), 404
+
+                result = subprocess.run(['python', 'request_data.py', '--query-file', query_file_path], capture_output=True, text=True)
+                if result.returncode != 0:
+                    error_msg = f"Request data failed with error:\n{result.stderr}"
+                    app.logger.error(error_msg)
+                    return jsonify({'error': error_msg}), 500
 
         # Run the script
         result = subprocess.run(['python', script_name], capture_output=True, text=True)
@@ -205,19 +279,7 @@ def download_query_result(filename):
     
 @app.route('/download_output/<filename>')
 def download_output(filename):
-    file_path = os.path.join('/app/output', filename)
-    if os.path.exists(file_path):
-        try:
-            return send_file(file_path, as_attachment=True)
-        except Exception as e:
-            app.logger.error(f"Error sending file {file_path}: {str(e)}")
-            return jsonify({'error': f'Error sending file: {str(e)}'}), 500
-    else:
-        return jsonify({'error': 'File not found'}), 404
-
-@app.route('/download_query/<query_name>')
-def download_query(query_name):
-    file_path = os.path.join('query', query_name)
+    file_path = os.path.join('output', filename)
     if os.path.exists(file_path):
         try:
             return send_file(file_path, as_attachment=True)
@@ -330,12 +392,14 @@ def download_all():
 def get_log(script_name):
     if script_name == 'all':
         return "You can now use Download All Results. Logs for individual scripts are available in their respective log files.", 200
-    
+
     if script_name == 'request_data.py':
         return jsonify({'message': 'No log file for request_data.py'}), 200
-    
-    log_file = f"{script_name[:-3]}.log"
-    log_path = os.path.join('/app/logs', log_file)
+
+    # Extract the base script name without extension
+    base_script_name = os.path.splitext(script_name)[0]
+    log_file = f"{base_script_name}.log"
+    log_path = os.path.join('logs', log_file)
     if os.path.exists(log_path):
         with open(log_path, 'r') as file:
             return file.read(), 200

@@ -287,34 +287,51 @@
         }
 
         function downloadAnalysisQuery() {
-            const scriptName = document.getElementById('scriptQuerySelect').value;
-            if (!scriptName) {
-                alert('Please select an analysis.');
-                return;
-            }
-            const queryFileName = `${scriptName.replace('.py', '.json')}`;
-            fetch(`/download_query/${queryFileName}`)
-                .then(response => {
-                    if (response.ok) {
-                        return response.blob();
-                    }
-                    return response.json().then(err => { throw new Error(err.error || 'Unknown error'); });
-                })
-                .then(blob => {
-                    const url = window.URL.createObjectURL(blob);
-                    const a = document.createElement('a');
-                    a.style.display = 'none';
-                    a.href = url;
-                    a.download = queryFileName;
-                    document.body.appendChild(a);
-                    a.click();
-                    window.URL.revokeObjectURL(url);
-                })
-                .catch(error => {
-                    console.error('Error downloading query:', error);
-                    document.getElementById('error-message').innerText = `Error downloading query: ${error.message}`;
-                });
+        const scriptName = document.getElementById('scriptQuerySelect').value;
+        if (!scriptName) {
+            alert('Please select an analysis.');
+            return;
         }
+        fetch(`/download_query/${scriptName}`)
+            .then(response => {
+                if (response.ok) {
+                    const contentDisposition = response.headers.get('Content-Disposition');
+                    const contentType = response.headers.get('Content-Type');
+                    let filename = '';
+                    if (contentDisposition) {
+                        const filenameRegex = /filename[^;=\n]*=((['"]).*?\2|[^;\n]*)/;
+                        const matches = filenameRegex.exec(contentDisposition);
+                        if (matches != null && matches[1]) {
+                            filename = matches[1].replace(/['"]/g, '');
+                        }
+                    }
+                    // Fallback if filename is not found
+                    if (!filename) {
+                        if (contentType === 'application/zip') {
+                            filename = `${scriptName.replace('.py', '')}_queries.zip`;
+                        } else {
+                            filename = `${scriptName.replace('.py', '.json')}`;
+                        }
+                    }
+                    return response.blob().then(blob => ({ blob, filename }));
+                }
+                return response.json().then(err => { throw new Error(err.error || 'Unknown error'); });
+            })
+            .then(({ blob, filename }) => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.style.display = 'none';
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+            })
+            .catch(error => {
+                console.error('Error downloading query:', error);
+                document.getElementById('error-message').innerText = `Error downloading query: ${error.message}`;
+            });
+    }
 
         function runCustomQuery() {
             const customQuery = document.getElementById('customQuery').value;
