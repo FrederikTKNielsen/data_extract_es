@@ -71,7 +71,7 @@ ES_DATA_ANALYSE/
    ```
 ### Access the Web Interface:
    ```
-   Open your web browser and navigate to http://localhost:5000.
+   Open your web browser and navigate to http://localhost:5000 or http://localhost:5001/
    Run All Analyses:
 
    Click on "Run All Scripts" to execute all analyses.
