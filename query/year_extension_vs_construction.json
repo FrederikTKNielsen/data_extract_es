@@ -1,0 +1,80 @@
+{
+  "size": 0,
+  "timeout": "2m",
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "filter": [
+        {
+          "exists": {
+            "field": "bbr_building.byg404_coordinates_wgs84"
+          }
+        },
+        {
+          "terms": {
+            "bbr_building.status": [6, 7]
+          }
+        },
+        {
+          "terms": {
+            "bbr_unit.status": [6, 7]
+          }
+        },
+        {
+          "exists": {
+            "field": "dawa_municipality.code"
+          }
+        },
+        {
+          "term": {
+            "bbr_property_relationship-plot.property_type": 1
+          }
+        },
+        {
+          "exists": {
+            "field": "bbr_property_relationship.property_ownership_code"
+          }
+        },
+        {
+          "range": {
+            "bbr_building.byg027_year_of_extension": {
+              "lt": "2024"
+            }
+          }
+        },
+        {
+          "range": {
+            "bbr_building.byg026_year_of_construction": {
+              "lt": "2024"
+            }
+          }
+        }
+      ],
+      "must": [
+        {
+          "script": {
+            "script": {
+              "source": "doc['bbr_building.byg027_year_of_extension'].value < doc['bbr_building.byg026_year_of_construction'].value"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "municipalities": {
+      "terms": {
+        "field": "dawa_municipality.code",
+        "size": 1000
+      },
+      "aggs": {
+        "units_usage": {
+          "terms": {
+            "field": "bbr_unit.enh020_units_usage",
+            "size": 1000
+          }
+        }
+      }
+    }
+  }
+}

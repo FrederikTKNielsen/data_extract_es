@@ -1,0 +1,62 @@
+{
+  "size": 1000,
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "exists": {
+            "field": "bbr_building.byg404_coordinates_wgs84"
+          }
+        },
+        {
+          "terms": {
+            "bbr_building.status": [6, 7]
+          }
+        },
+        {
+          "terms": {
+            "bbr_unit.status": [6, 7]
+          }
+        },
+        {
+          "exists": {
+            "field": "dawa_municipality.code"
+          }
+        },
+        {
+          "term": {
+            "bbr_property_relationship-plot.property_type": 1
+          }
+        },
+        {
+          "term": {
+            "bbr_unit.enh020_units_usage": 140
+          }
+        },
+        {
+          "exists": {
+            "field": "bbr_property_relationship.property_ownership_code"
+          }
+        }
+      ]
+    }
+  },
+  "_source": ["dar_address.address_designation", "emoweb_energy_label.label_status"],
+  "aggs": {
+    "municipalities": {
+      "terms": {
+        "field": "dawa_municipality.code",
+        "size": 100
+      },
+      "aggs": {
+        "energy_label_validity": {
+          "terms": {
+            "field": "emoweb_energy_label.label_status",
+            "size": 10
+          }
+        }
+      }
+    }
+  }
+}

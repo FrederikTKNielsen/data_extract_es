@@ -1,0 +1,28 @@
+{
+  "size": 1000, 
+  "track_total_hits": true,
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "exists": {
+            "field": "bbr_building.byg027_year_of_extension"
+          }
+        },
+        {
+          "exists": {
+            "field": "bbr_building.byg026_year_of_construction"
+          }
+        },
+        {
+          "script": {
+            "script": {
+              "source": "doc['bbr_building.byg027_year_of_extension'].value < doc['bbr_building.byg026_year_of_construction'].value"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "_source": ["bbr_building.byg027_year_of_extension", "bbr_building.byg026_year_of_construction", "dar_address.address_designation"]
+}
