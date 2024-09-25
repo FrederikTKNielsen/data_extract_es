@@ -11,25 +11,26 @@ ES_DATA_ANALYSE/
 ├── output/                 # Output directory for analysis results (generated at runtime)
 ├── query/                  # Elasticsearch query files
 ├── templates/              # HTML templates for the web interface
-├── scripts/                # Python scripts for data analysis
-│   ├── brændeovn_pejs.py
-│   ├── building_area.py
-│   ├── building_area_small.py
-│   ├── construction_years.py
-│   ├── energy_label_age.py
-│   ├── energy_labels.py
-│   ├── energy_labels_year_of_construction.py
-│   ├── heating_matrix.py
-│   ├── null_heating_installation.py
-│   ├── supplementary_heating.py
-│   ├── unit_areas.py
-│   ├── unit_usage_140_vs_energy_label_validity.py
-│   ├── units_usage_all_energy_label_validity.py
-│   ├── units_usage_energy_label_validity.py
-│   ├── year_extension_vs_construction.py
-│   ├── buildings_1000.py
-│   ├── large_buildings_energy_labels.py
-│   └── 9_heating_installation_null_mediums.py
+│                           # Python scripts for data analysis
+├── brændeovn_pejs.py
+├── building_area.py
+├── building_area_small.py
+├── construction_years.py
+├── energy_label_age.py
+├── energy_labels.py
+├── energy_labels_year_of_construction.py
+├── heating_matrix.py
+├── null_heating_installation.py
+├── supplementary_heating.py
+├── unit_areas.py
+├── unit_usage_140_vs_energy_label_validity.py
+├── units_usage_all_energy_label_validity.py
+├── units_usage_energy_label_validity.py
+├── year_extension_vs_construction.py
+├── buildings_1000.py
+├── large_buildings_energy_labels.py
+├── 9_heating_installation_null_mediums.py
+└── ...
 ├── request_data.py         # Script to fetch data from Elasticsearch
 ├── dockerfile
 ├── docker-compose.yml
