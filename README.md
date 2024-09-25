@@ -72,25 +72,25 @@ ES_DATA_ANALYSE/
 ### Access the Web Interface:
    ```
    Open your web browser and navigate to http://localhost:5000 or http://localhost:5001/
+   
    Run All Analyses:
-
-   Click on "Run All Scripts" to execute all analyses.
-   After completion, click on "Download All Results" to download a ZIP file containing all output files.
+   - Click on "Run All Scripts" to execute all analyses.
+   - After completion, click on "Download All Results" to download a ZIP file containing all output files.
+   
    Run Individual Analysis:
-
-   Select an analysis from the "Run Individual Analysis" dropdown menu.
-   Click on "Run Selected Analysis" to execute it.
-   After completion, you can:
-   Click "Download Output" to download the Excel output file.
-   Click "Download Query" to download the corresponding Elasticsearch query.
+   - Select an analysis from the "Run Individual Analysis" dropdown menu.
+   - Click on "Run Selected Analysis" to execute it.
+   - After completion, you can:
+   - Click "Download Output" to download the Excel output file.
+   - Click "Download Query" to download the corresponding Elasticsearch query.
+   
    Run Custom Query:
-
-   Enter your custom Elasticsearch query in JSON format in the "Run Custom Query" text area.
-   Click on "Run Custom Query" to execute it.
-   After execution, a download link will appear if the query was successful.
-   Important Notes
-   Network Access: Ensure you are connected to the VMAS network or VPN to access Elasticsearch.
-   Data and Output Directories: The data/ and output/ directories are generated at runtime and are not tracked by Git.
+   - Enter your custom Elasticsearch query in JSON format in the "Run Custom Query" text area.
+   - Click on "Run Custom Query" to execute it.
+   - After execution, a download link will appear if the query was successful.
+   - Important Notes
+   - Network Access: Ensure you are connected to the VMAS network or VPN to access Elasticsearch.
+   - Data and Output Directories: The data/ and output/ directories are generated at runtime and are not tracked by Git.
    ```
 
 ### Available Scripts
